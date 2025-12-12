@@ -1,0 +1,273 @@
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/*@font-face {*/
+/*    font-family: "Skranji";*/
+/*    src: url(Skranji-Bold.ttf);*/
+/*}*/
+
+/* Design */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Crucial for layout stability */
+}
+
+body {
+    min-height: 100vh;
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif, Skranji, system-ui, sans-serif;
+}
+
+/* Nav Bar */
+nav {
+    padding: 10px 0;
+    background-color: rgb(82, 117, 140);
+    backdrop-filter: blur(10px);
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
+}
+
+nav li {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: rgb(91, 173, 201);
+    color: rgb(36, 64, 75);
+    border-radius: 5px;
+}
+
+nav li:first-child {
+    margin-right: auto;
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+/* Side Bar (Mobile) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh; /* Changed from 200vh to standard 100vh */
+    width: 30%; /* Default width */
+    z-index: 999;
+    background-color: rgb(82, 117, 140);
+    box-shadow: -10px 5px 10px rgba(0,0,0,0.2);
+    display: flex; /* Hidden by default in JS usually, but styled here */
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px; /* Space for close button */
+    backdrop-filter: blur(10px);
+    transition: 0.5s;
+}
+
+.logo {
+    font-size: larger;
+    color: white;
+    font-family: Skranji, sans-serif;
+    padding: 20px;
+}
+
+.sidebar li, .sidebar a {
+    width: 100%;
+}
+
+.menuButton {
+    display: none;
+}
+
+/* Mobile Responsive Rules */
+@media(max-width: 75em) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menuButton {
+        display: block;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 37.5em) {
+    .sidebar {
+        width: 60%;
+    }
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.All-Grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for better responsiveness */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: 10px 5px 20px rgba(0,0,0,0.1); /* Softened shadow */
+}
+
+
+@media (min-width: 601px) and (max-width: 750px) {
+    .All-Grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 751px) {
+    .All-Grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.topCommittee,
+.Programme,
+.PublicRelations,
+.Publicity,
+.Sponsorship,
+.Logistics,
+.Technical,
+.Design {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-image: linear-gradient(to bottom, white 0%, white 50%, transparent 50%, transparent 100%);
+    padding-bottom: 20px;
+    border-radius: 40px;
+}
+
+.imgBox {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.imgBox img {
+    height: 100%;
+    width: auto;
+    border-radius: 50%;
+}
+
+.description h5 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.description p {
+    color: aliceblue;
+}
+
+
+.CommitteeSocMed ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+.CommitteeSocMed a {
+    text-decoration: none;
+    font-size: 24px;
+    transition: transform 0.2s;
+}
+
+.CommitteeSocMed a:hover {
+    transform: scale(1.2);
+}
+
+
+.fa-facebook { color: #3b5998; }
+.fa-instagram { color: #8a3ab9; }
+.fa-linkedin-square { color: #0077B5; }
+
+/* Search Bar */
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.searchTerm {
+    width: 100%;
+    height: 36px;
+    padding: 5px;
+    border: 3px solid #72cad6;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #72cad6;
+    background: #72cad6;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;           /* Centers the icon */
+    justify-content: center; /* Centers the icon */
+    align-items: center;     /* Centers the icon */
+}
+
+.Organizer {
+    position: sticky;
+    top: 20px;
+    z-index: 10;
+    text-align: left;
+    margin-left: 20px;
+    padding: 10px;
+    height: fit-content;
+    font-size: 18px;
+    color: #333;
+}
+
+.Organizer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Organizer a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
