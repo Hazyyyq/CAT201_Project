@@ -160,6 +160,16 @@ nav li:first-child {
     background-image: linear-gradient(to bottom, white 0%, white 50%, transparent 50%, transparent 100%);
     padding-bottom: 20px;
     border-radius: 40px;
+
+    /*smooth animation settings*/
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.topCommittee:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background-image: linear-gradient(to bottom, #ffffff 0%, #e0f7fa 100%)
 }
 
 .imgBox {
