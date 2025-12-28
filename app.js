@@ -9,10 +9,10 @@ http.createServer(function (request, response) {
     console.log('Server Requesting ' + request.url);
 
     // 1. HANDLE HTML REQUESTS
-    if (request.url === "/" || request.url === "/aboutPage.html") {
+    if (request.url === "/" || request.url === "/frontPage.html") {
 
         // FIXED: Removed '../' because app.js is now next to the public folder
-        const htmlPath = path.join(__dirname, 'public/HTML/aboutPage.html');
+        const htmlPath = path.join(__dirname, 'public/HTML/frontPage.html');
 
         console.log("Looking for HTML at: " + htmlPath); // Debug line
 
@@ -28,10 +28,27 @@ http.createServer(function (request, response) {
         });
 
         // 2. HANDLE CSS REQUESTS
-    } else if (request.url.includes(".css")) {
+    } // NEW BLOCK: Add this to handle the About Page separately
+    else if (request.url === "/aboutPage.html") {
+
+    const htmlPath = path.join(__dirname, 'public/HTML/aboutPage.html');
+
+    fs.readFile(htmlPath, function (err, html) {
+        if (err) {
+            response.writeHead(404);
+            response.end("About Page HTML not found");
+        } else {
+            response.writeHead(200, {'Content-Type': 'text/html'});
+            response.end(html);
+        }
+    });
+
+}    else if (request.url.includes(".css")) {
 
         // FIXED: Removed '../'
-        const cssPath = path.join(__dirname, 'public/CSS/aboutPage.css');
+        //const cssPath = path.join(__dirname, 'public/CSS/aboutPage.css');
+        const cssFile = path.basename(request.url); // Gets "frontPage.css" from the URL
+        const cssPath = path.join(__dirname, 'public/CSS', cssFile);
 
         fs.readFile(cssPath, function (err, css) {
             if (err) {
