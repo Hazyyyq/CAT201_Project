@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaki Gamerz - Admin Dashboard</title>
-
     <link rel="stylesheet" href="../CSS/adminPageDesign.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -48,8 +46,7 @@
         <button class="tab" onclick="filterProducts('Games', this)">Games</button>
     </div>
 
-    <div class="product-grid" id="productGrid">
-    </div>
+    <div class="product-grid" id="productGrid"></div>
 </div>
 
 <div id="productModal" class="modal">
@@ -68,14 +65,21 @@
             </div>
 
             <div class="form-group">
-                <label>Picture URL</label>
-                <input type="text" id="pImage" placeholder="https://example.com/image.jpg">
-                <small style="color:#666; font-size: 11px;">Leave blank to keep current image when editing.</small>
+                <label>Product Image</label>
+
+                <label for="pFile" class="custom-file-upload">
+                    <i class="fa fa-cloud-upload"></i> Choose Image
+                </label>
+                <span id="fileName" class="file-name-display">No file chosen</span>
+
+                <input type="file" id="pFile" accept=".jpg, .jpeg, .png, .webp">
+
+                <img id="imagePreview" src="" alt="Preview">
             </div>
 
             <div class="form-row">
                 <div class="form-group">
-                    <label>Category (Tagging)</label>
+                    <label>Category</label>
                     <select id="pCategory">
                         <option value="Phone">Phone</option>
                         <option value="Watch">Watch</option>

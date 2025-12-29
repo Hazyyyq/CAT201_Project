@@ -11,6 +11,20 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <style>
+        .nav-admin-btn {
+            background-color: #0071e3;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 980px;
+            text-decoration: none;
+            font-size: 13px;
+            transition: background-color 0.3s;
+        }
+        .nav-admin-btn:hover {
+            background-color: #0077ed;
+        }
+    </style>
 </head>
 
 <body>
@@ -24,17 +38,17 @@
             <a href="#">Tablet</a>
             <a href="#">Games</a>
             <a href="aboutPage.html">About Us</a>
-
         </div>
 
-        <div class="nav-right">
+        <div class="nav-right" style="display: flex; gap: 15px; align-items: center;">
+            <a href="adminPageDesign.html" class="nav-admin-btn">Admin Panel</a>
+
             <a href="login.html" class="login-btn">Login</a>
         </div>
 
         <div class="search-box">
             <i class="fa fa-search"></i>
         </div>
-    </div>
     </div>
 </nav>
 
@@ -44,7 +58,7 @@
         <h2 class="headline">KakiPhone</h2>
         <h3 class="subhead">Titanium. So Strong. So light. So pro.</h3>
         <div class="cta-links">
-            <a href="adminPageDesign.html" class="btn btn-blue">Learn More</a>
+            <a href="#" class="btn btn-blue">Learn More</a>
             <a href="#" class="btn btn-outline">Buy</a>
         </div>
     </div>
@@ -61,7 +75,7 @@
         <h3 class="subhead" style="color: black;">Adventure awaits.</h3>
 
         <div class="cta-links">
-            <a href="adminPageDesign.html" class="btn btn-blue">Learn More</a>
+            <a href="#" class="btn btn-blue">Learn More</a>
             <a href="#" class="btn btn-outline-dark">Buy</a>
         </div>
     </div>
@@ -77,7 +91,7 @@
         <h3 class="subhead">Two sizes. Faster chip. Does it all</h3>
 
         <div class="cta-links">
-            <a href="adminPageDesign.html" class="btn btn-blue">Learn more</a>
+            <a href="#" class="btn btn-blue">Learn more</a>
             <a href="#" class="btn btn-outline">Buy</a>
         </div>
     </div>
@@ -104,7 +118,6 @@
              alt="Team">
     </div>
 </div>
-
 
 <script>
     window.addEventListener('scroll', reveal);

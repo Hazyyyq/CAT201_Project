@@ -1,5 +1,4 @@
 // --- 1. INITIAL SETUP ---
-// Dummy data to populate the page if it's the first time loading
 const defaultProducts = [
     {
         id: 1,
@@ -15,7 +14,7 @@ const defaultProducts = [
         name: "KakiWatch Ultra",
         category: "Watch",
         price: 3299,
-        stock: 5,
+        stock: 3,
         desc: "Adventure awaits. The ultimate sports watch.",
         image: "https://images.unsplash.com/photo-1594619272803-932ee1b5a0d9?w=600&auto=format&fit=crop"
     },
@@ -39,54 +38,65 @@ const defaultProducts = [
     }
 ];
 
-// Load products from LocalStorage. If empty, use defaultProducts.
 let products = JSON.parse(localStorage.getItem('kakiProducts')) || defaultProducts;
-
-// Variables to track state
 let currentCategory = 'all';
 let isEditing = false;
 let editId = null;
+let tempImageBase64 = "";
 
-// Run this when page loads
 document.addEventListener('DOMContentLoaded', () => {
     renderGrid();
 
-    // Close modal if user clicks outside of it
     window.onclick = function(event) {
         if (event.target == document.getElementById('productModal')) {
             closeModal();
         }
     }
 
-    // Listen for the Form Submit (Save button)
     document.getElementById('productForm').addEventListener('submit', handleFormSubmit);
+
+    // File Reader Logic
+    document.getElementById('pFile').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            // Update Filename Text
+            document.getElementById('fileName').textContent = file.name;
+
+            // Convert to Base64
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                tempImageBase64 = evt.target.result;
+                const preview = document.getElementById('imagePreview');
+                preview.src = tempImageBase64;
+                preview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        } else {
+            document.getElementById('fileName').textContent = "No file chosen";
+        }
+    });
 });
 
-// --- 2. RENDER & FILTER FUNCTIONS ---
-
-// Draws the grid of products based on current filter
+// --- 2. RENDER FUNCTIONS ---
 function renderGrid() {
     const grid = document.getElementById('productGrid');
-    grid.innerHTML = ''; // Clear existing cards
+    grid.innerHTML = '';
 
-    // Filter the products array
     const filtered = currentCategory === 'all'
         ? products
         : products.filter(p => p.category === currentCategory);
 
-    // If no products found in category
     if (filtered.length === 0) {
         grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #666; padding: 20px;">No products found in this category.</p>';
         return;
     }
 
-    // Loop through filtered products and create HTML
     filtered.forEach(item => {
         const card = document.createElement('div');
         card.className = 'product-card';
 
-        // Use placeholder if image is missing
         const imgSrc = item.image ? item.image : 'https://via.placeholder.com/300?text=No+Image';
+        const stockClass = item.stock < 5 ? 'text-danger' : '';
 
         card.innerHTML = `
             <img src="${imgSrc}" class="card-img" alt="${item.name}">
@@ -96,7 +106,7 @@ function renderGrid() {
                 <p class="card-desc">${item.desc}</p>
                 <div class="stock-info">
                     <div>Price: <span>RM${parseFloat(item.price).toFixed(2)}</span></div>
-                    <div>Stock: <span>${item.stock}</span></div>
+                    <div>Stock: <span class="${stockClass}">${item.stock}</span></div>
                 </div>
                 <div class="card-actions">
                     <button class="btn-edit" onclick="openModal('edit', ${item.id})">Edit</button>
@@ -108,68 +118,44 @@ function renderGrid() {
     });
 }
 
-// Called when category buttons are clicked
 function filterProducts(category, btnElement) {
     currentCategory = category;
-
-    // Update the visual look of buttons (highlight active one)
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     btnElement.classList.add('active');
-
-    // Re-draw grid without reloading page
     renderGrid();
 }
 
-// --- 3. CRUD OPERATIONS (Add, Edit, Delete) ---
-
+// --- 3. CRUD LOGIC ---
 function deleteProduct(id) {
     if(confirm("Are you sure you want to delete this product?")) {
-        // Remove product from array
         products = products.filter(p => p.id !== id);
-        // Save to storage and refresh
         saveAndRender();
     }
 }
 
 function handleFormSubmit(e) {
-    e.preventDefault(); // Stop form from refreshing the page
+    e.preventDefault();
 
-    // Get values from inputs
     const name = document.getElementById('pName').value;
-    const imageInput = document.getElementById('pImage').value;
     const category = document.getElementById('pCategory').value;
     const stock = document.getElementById('pStock').value;
     const price = document.getElementById('pPrice').value;
     const desc = document.getElementById('pDesc').value;
 
     if (isEditing) {
-        // --- EDIT MODE ---
         const index = products.findIndex(p => p.id === editId);
         if (index !== -1) {
-            // Keep old image if new input is empty
-            const finalImage = imageInput.trim() === "" ? products[index].image : imageInput;
-
+            const finalImage = tempImageBase64 !== "" ? tempImageBase64 : products[index].image;
             products[index] = {
                 id: editId,
-                name: name,
-                image: finalImage,
-                category: category,
-                stock: stock,
-                price: price,
-                desc: desc
+                name, image: finalImage, category, stock, price, desc
             };
         }
     } else {
-        // --- ADD MODE ---
-        const newId = Date.now(); // Generate a unique ID
+        const newId = Date.now();
         products.push({
             id: newId,
-            name: name,
-            image: imageInput,
-            category: category,
-            stock: stock,
-            price: price,
-            desc: desc
+            name, image: tempImageBase64, category, stock, price, desc
         });
     }
 
@@ -177,38 +163,46 @@ function handleFormSubmit(e) {
     closeModal();
 }
 
-// Helper to save to LocalStorage and redraw grid
 function saveAndRender() {
     localStorage.setItem('kakiProducts', JSON.stringify(products));
     renderGrid();
 }
 
-// --- 4. MODAL VISIBILITY ---
-
+// --- 4. MODAL ---
 function openModal(mode, id = null) {
     const modal = document.getElementById('productModal');
     modal.style.display = 'flex';
+
+    tempImageBase64 = "";
+    document.getElementById('pFile').value = "";
+    document.getElementById('fileName').textContent = "No file chosen";
 
     if (mode === 'edit') {
         isEditing = true;
         editId = id;
         document.getElementById('modalTitle').innerText = 'Edit Product';
 
-        // Find product and fill form
         const p = products.find(item => item.id === id);
         document.getElementById('pName').value = p.name;
-        document.getElementById('pImage').value = ""; // Clear so they can see they can leave empty
-        document.getElementById('pImage').placeholder = p.image; // Show current URL as hint
         document.getElementById('pCategory').value = p.category;
         document.getElementById('pStock').value = p.stock;
         document.getElementById('pPrice').value = p.price;
         document.getElementById('pDesc').value = p.desc;
+
+        const preview = document.getElementById('imagePreview');
+        if(p.image) {
+            preview.src = p.image;
+            preview.style.display = 'block';
+        } else {
+            preview.style.display = 'none';
+        }
+
     } else {
         isEditing = false;
         editId = null;
         document.getElementById('modalTitle').innerText = 'Add New Product';
         document.getElementById('productForm').reset();
-        document.getElementById('pImage').placeholder = "https://example.com/image.jpg";
+        document.getElementById('imagePreview').style.display = 'none';
     }
 }
 
