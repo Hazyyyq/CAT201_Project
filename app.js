@@ -8,17 +8,25 @@ http.createServer(function (request, response) {
 
     console.log('Server Requesting ' + request.url);
 
-    // 1. HANDLE HTML REQUESTS
+    // --- HTML ROUTES ---
+    let htmlFile = '';
+
     if (request.url === "/" || request.url === "/frontPage.html") {
+        htmlFile = 'frontPage.html';
+    } else if (request.url === "/aboutPage.html") {
+        htmlFile = 'aboutPage.html';
+    } else if (request.url.startsWith("/productPage.html")) {
+        // .startsWith is needed because we will use queries like ?type=phone
+        htmlFile = 'productPage.html';
+    } else if (request.url === "/cartPage.html") {
+        htmlFile = 'cartPage.html';
+    }
 
-        // FIXED: Removed '../' because app.js is now next to the public folder
-        const htmlPath = path.join(__dirname, 'public/HTML/frontPage.html');
-
-        console.log("Looking for HTML at: " + htmlPath); // Debug line
-
+    // If an HTML file was matched above, serve it
+    if (htmlFile) {
+        const htmlPath = path.join(__dirname, 'public/HTML', htmlFile);
         fs.readFile(htmlPath, function (err, html) {
             if (err) {
-                console.error("HTML Error: " + err.message);
                 response.writeHead(404);
                 response.end("HTML File not found");
             } else {
@@ -26,79 +34,49 @@ http.createServer(function (request, response) {
                 response.end(html);
             }
         });
+        return; // Exit function so we don't check other types
+    }
 
-        // 2. HANDLE CSS REQUESTS
-    } // NEW BLOCK: Add this to handle the About Page separately
-    else if (request.url === "/aboutPage.html") {
-
-    const htmlPath = path.join(__dirname, 'public/HTML/aboutPage.html');
-
-    fs.readFile(htmlPath, function (err, html) {
-        if (err) {
-            response.writeHead(404);
-            response.end("About Page HTML not found");
-        } else {
-            response.writeHead(200, {'Content-Type': 'text/html'});
-            response.end(html);
-        }
-    });
-
-}    else if (request.url.includes(".css")) {
-
-        // FIXED: Removed '../'
-        //const cssPath = path.join(__dirname, 'public/CSS/aboutPage.css');
-        const cssFile = path.basename(request.url); // Gets "frontPage.css" from the URL
+    // --- CSS REQUESTS ---
+    if (request.url.includes(".css")) {
+        const cssFile = path.basename(request.url);
         const cssPath = path.join(__dirname, 'public/CSS', cssFile);
-
         fs.readFile(cssPath, function (err, css) {
             if (err) {
-                console.error("CSS Error: " + err.message);
                 response.writeHead(404);
-                response.write("CSS File not found");
+                response.end("CSS Not Found");
             } else {
                 response.writeHead(200, {'Content-Type': 'text/css'});
                 response.end(css);
             }
         });
 
-        // 3. HANDLE JAVASCRIPT FILES (script.js)
-    } else if (request.url === '/script.js') {
-
-        // FIXED: Removed '../' - Assuming script.js is in public/JavaScript
-        const jsPath = path.join(__dirname, 'public/JavaScript/script.js');
-
-        fs.readFile(jsPath, function (err, JS) {
+        // --- JS REQUESTS ---
+    } else if (request.url.includes(".js")) {
+        const jsFile = path.basename(request.url);
+        const jsPath = path.join(__dirname, 'public/JavaScript', jsFile);
+        fs.readFile(jsPath, function (err, js) {
             if (err) {
                 response.writeHead(404);
                 response.end("JS Not Found");
             } else {
                 response.writeHead(200, {'Content-Type': 'text/javascript'});
-                response.end(JS);
+                response.end(js);
             }
         });
 
-        // 4. HANDLE IMAGES
+        // --- IMAGE REQUESTS ---
     } else if (request.url.match(/\.(jpg|jpeg|png|webp|gif)$/)) {
-
-        // FIXED: Removed '../'
         const imgPath = path.join(__dirname, 'public/img', path.basename(request.url));
-
         fs.readFile(imgPath, function(err, content) {
             if (err) {
-                console.error("Image Error: " + err.message);
                 response.writeHead(404);
                 response.end("Image not found");
             } else {
-                const ext = path.extname(imgPath).toLowerCase();
-                let contentType = 'image/jpeg';
-                if (ext === '.png') contentType = 'image/png';
-                if (ext === '.webp') contentType = 'image/webp';
-
-                response.writeHead(200, {'Content-Type': contentType});
+                response.writeHead(200);
                 response.end(content);
             }
         });
-
     } else {
         response.writeHead(404);
         response.end("404 Not Found");

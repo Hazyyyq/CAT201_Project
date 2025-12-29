@@ -19,11 +19,15 @@
         <a href="/" class="logo">Kaki Gamerz</a>
 
         <div class="nav-links">
-            <a href="#">Phone</a>
-            <a href="#">Watch</a>
-            <a href="#">Tablet</a>
+            <a href="productPage.html?type=phone">Phone</a>
+            <a href="productPage.html?type=watch">Watch</a>
+            <a href="productPage.html?type=tablet">Tablet</a>
             <a href="#">Games</a>
             <a href="aboutPage.html">About Us</a>
+
+            <a href="cartPage.html" style="color: #0071e3; font-weight: bold;">
+                Cart (<span id="front-cart-count">0</span>)
+            </a>
 
         </div>
 
@@ -41,7 +45,7 @@
         <h3 class="subhead">Titanium. So Strong. So light. So pro.</h3>
         <div class="cta-links">
             <a href="#" class="btn btn-blue">Learn More</a>
-            <a href="#" class="btn btn-outline">Buy</a>
+            <a href="productPage.html?type=phone" class="btn btn-outline">Buy</a>
         </div>
     </div>
 
@@ -58,7 +62,7 @@
 
         <div class="cta-links">
             <a href="#" class="btn btn-blue">Learn More</a>
-            <a href="#" class="btn btn-outline-dark">Buy</a>
+            <a href="productPage.html?type=watch" class="btn btn-outline-dark">Buy</a>
         </div>
     </div>
 
@@ -74,7 +78,7 @@
 
         <div class="cta-links">
             <a href="#" class="btn btn-blue">Learn more</a>
-            <a href="#" class="btn btn-outline">Buy</a>
+            <a href="productPage.html?type=tablet" class="btn btn-outline">Buy</a>
         </div>
     </div>
 
@@ -117,6 +121,17 @@
         }
     }
     reveal();
+
+    function updateFrontCartCount() {
+        const cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
+        const countSpan = document.getElementById('front-cart-count');
+        if(countSpan) {
+            countSpan.innerText = cart.length;
+        }
+    }
+
+    // Run immediately when page loads
+    updateFrontCartCount();
 </script>
 </body>
 </html>

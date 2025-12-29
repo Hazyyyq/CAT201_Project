@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Product</title>
+    <link rel="stylesheet" href="../CSS/frontPage.css">
+    <style>
+        .product-container { max-width: 800px; margin: 100px auto; padding: 20px; display: flex; gap: 40px; }
+        .product-image { flex: 1; }
+        .product-image img { width: 100%; border-radius: 20px; }
+        .product-details { flex: 1; font-family: 'Inter', sans-serif; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        select, input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc; }
+
+        /* New Price Style */
+        .price-tag { font-size: 28px; color: #0071e3; font-weight: bold; margin: 10px 0; }
+
+        .add-btn { background-color: #0071e3; color: white; border: none; padding: 15px 30px; border-radius: 30px; cursor: pointer; font-size: 16px; width: 100%; transition: 0.3s;}
+        .add-btn:hover { background-color: #0077ed; transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-content">
+        <a href="/" class="logo">Kaki Gamerz</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="cartPage.html" style="font-weight: bold;">🛒 Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </div>
+</nav>
+
+<div class="product-container">
+    <div class="product-image">
+        <img id="p-img" src="" alt="Product">
+    </div>
+    <div class="product-details">
+        <h1 id="p-title">Product Name</h1>
+
+        <div id="p-price" class="price-tag">RM 0.00</div>
+
+        <p id="p-desc">Description goes here.</p>
+
+        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+        <div class="form-group">
+            <label>Color</label>
+            <select id="opt-color">
+                <option>Titanium Black</option>
+                <option>Titanium White</option>
+                <option>Deep Purple</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Storage</label>
+            <select id="opt-size" onchange="updatePrice()">
+                <option value="128">128GB (Base)</option>
+                <option value="256">256GB (+RM 500)</option>
+                <option value="512">512GB (+RM 1000)</option>
+            </select>
+        </div>
+
+        <button class="add-btn" onclick="addToCart()">Add to Bag</button>
+    </div>
+</div>
+
+<script>
+    // 1. Get Product Type
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get('type');
+
+    // 2. Define Product Data with Base Prices
+    const products = {
+        'phone': {
+            name: "KakiPhone 15 Pro",
+            basePrice: 4999,
+            desc: "The ultimate gaming phone with titanium finish.",
+            img: "https://images.unsplash.com/photo-1732020883989-b22d66f8f1b9?w=600&auto=format&fit=crop&q=60"
+        },
+        'watch': {
+            name: "KakiWatch Ultra",
+            basePrice: 3299,
+            desc: "Rugged and capable. Built for the wild.",
+            img: "https://images.unsplash.com/photo-1594619272803-932ee1b5a0d9?w=600&auto=format&fit=crop&q=60"
+        },
+        'tablet': {
+            name: "KakiPad Air",
+            basePrice: 2899,
+            desc: "Serious performance in a thin, light design.",
+            img: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=2015&auto=format&fit=crop"
+        }
+    };
+
+    // Load Data
+    const currentProduct = products[type] || products['phone'];
+    let finalPrice = currentProduct.basePrice; // Track the changing price
+
+    document.getElementById('p-title').innerText = currentProduct.name;
+    document.getElementById('p-desc').innerText = currentProduct.desc;
+    document.getElementById('p-img').src = currentProduct.img;
+
+    // 3. Dynamic Price Function
+    function updatePrice() {
+        const size = document.getElementById('opt-size').value;
+        let extraCost = 0;
+
+        // Logic: Add money based on size
+        if(size === "256") extraCost = 500;
+        if(size === "512") extraCost = 1000;
+
+        // Calculate Final Price
+        finalPrice = currentProduct.basePrice + extraCost;
+
+        // Update the HTML
+        document.getElementById('p-price').innerText = "RM " + finalPrice;
+    }
+
+    // 4. Run the function once to set the startup price
+    updatePrice();
+    updateCartCount();
+
+    // 5. Add to Cart Logic
+    function addToCart() {
+        const color = document.getElementById('opt-color').value;
+        const size = document.getElementById('opt-size').value + "GB";
+
+        const newItem = {
+            id: Date.now(),
+            name: currentProduct.name,
+            price: finalPrice, // Important: Use the calculated price!
+            img: currentProduct.img,
+            color: color,
+            size: size
+        };
+
+        let cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
+        cart.push(newItem);
+        localStorage.setItem('kakiCart', JSON.stringify(cart));
+
+        alert("Added to Cart!");
+        updateCartCount();
+    }
+
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
+        const countElement = document.getElementById('cart-count');
+        if(countElement) countElement.innerText = cart.length;
+    }
+
+</script> </body>
+</html>
