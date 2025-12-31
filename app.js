@@ -24,6 +24,19 @@ http.createServer(function (request, response) {
         const htmlPath = path.join(__dirname, 'public/HTML', fileName);
         serveFile(response, htmlPath, 'text/html');
     }
+        fs.readFile(htmlPath, function (err, html) {
+            if (err) {
+                console.error("HTML Error: " + err.message);
+                response.writeHead(404);
+                response.end("Front Page not found");
+            } else {
+                response.writeHead(200, {'Content-Type': 'text/html'});
+                response.end(html);
+            }
+        });
+    } else if (request.url.endsWith(".html")) {
+        const htmlFile = path.basename(request.url);
+        const htmlPath = path.join(__dirname, 'public/HTML', htmlFile);
 
     // 3. HANDLE CSS (Dynamic)
     else if (cleanUrl.endsWith(".css")) {

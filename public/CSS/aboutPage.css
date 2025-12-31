@@ -1,283 +1,355 @@
-/* Fonts */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-/*@font-face {*/
-/*    font-family: "Skranji";*/
-/*    src: url(Skranji-Bold.ttf);*/
-/*}*/
-
-/* Design */
+/* --- Global Resets & Fonts --- */
+/* Matches your Front Page exactly */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Crucial for layout stability */
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
+    /*background: #f8f9fa; !* Keeping the soft gray for the profile card contrast *!*/
+    background-color: #000;
+    color: #333;
+    overflow-x: hidden;
     min-height: 100vh;
-    background: #f2f2f2;
-    font-family: 'Open Sans', sans-serif, Skranji, system-ui, sans-serif;
 }
 
-/* Nav Bar */
+/* --- EXACT NAVBAR FROM FRONT PAGE --- */
 nav {
-    padding: 10px 0;
-    background-color: rgb(82, 117, 140);
-    backdrop-filter: blur(10px);
-    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
-}
-
-nav ul {
+    background-color: rgba(0,0,0,0.8);
+    height: 48px;
     width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 20px;
-}
-
-nav li {
-    height: 50px;
-    display: flex;
-    align-items: center;
-}
-
-nav a {
-    height: 100%;
-    padding: 0 15px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: aliceblue;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    background-color: rgb(91, 173, 201);
-    color: rgb(36, 64, 75);
-    border-radius: 5px;
-}
-
-nav li:first-child {
-    margin-right: auto;
-    margin-left: 20px;
-    font-size: 25px;
-}
-
-/* Side Bar (Mobile) */
-.sidebar {
     position: fixed;
     top: 0;
-    right: 0;
-    height: 100vh; /* Changed from 200vh to standard 100vh */
-    width: 30%; /* Default width */
-    z-index: 999;
-    background-color: rgb(82, 117, 140);
-    box-shadow: -10px 5px 10px rgba(0,0,0,0.2);
-    display: flex; /* Hidden by default in JS usually, but styled here */
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 60px; /* Space for close button */
-    backdrop-filter: blur(10px);
-    transition: 0.5s;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,233,0.1);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.nav-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    padding: 0 20px;
 }
 
 .logo {
-    font-size: larger;
-    color: white;
-    font-family: Skranji, sans-serif;
-    padding: 20px;
+    color: #f5f5f7;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.sidebar li, .sidebar a {
-    width: 100%;
+.logo:hover {
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6);
 }
 
-.menuButton {
-    display: none;
+/* Note: I removed the ".nav-links { display: flex }" block
+   because it was absent in your Front Page code. */
+
+.nav-links a {
+    color: #d6d6d6;
+    text-decoration: none;
+    font-size: 12px;  /* Matches your Front Page exactly */
+    margin: 0 15px;
+    transition: color 0.3s;
 }
 
-/* Mobile Responsive Rules */
-@media(max-width: 75em) {
-    .hideOnMobile {
-        display: none;
-    }
-    .menuButton {
-        display: block;
-        margin-left: 10px;
-    }
+.nav-links a:hover {
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6); /* Adds a slight neon glow to text */
 }
 
-@media (max-width: 37.5em) {
-    .sidebar {
-        width: 60%;
-    }
+.search-box i {
+    color: #d6d6d6;
+    cursor: pointer;
+    /* Removed explicit font-size to match Front Page */
 }
 
-/* Layout */
+/* --- Layout Container (Specific to About Page) --- */
 .container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Keeps content from hiding behind the fixed navbar */
+    padding: 80px 20px 40px;
+}
+
+/* Container to hold the title and tagline */
+.brand-header {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 10; /* Ensures it sits on top of video/images */
+}
+
+/* The Main Title (H1) */
+.big-brand-title {
+    font-size: 5rem; /* Massive size (80px) */
+    font-weight: 900; /* Extra Bold */
+    margin: 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -2px; /* Tightens the letters for a modern look */
+    color: #fff;
+    font-family: 'Inter', sans-serif; /* Or your preferred font */
+}
+
+/* The Neon Effect */
+.neon-text {
+    color: #66fcf1; /* Your Neon Cyan */
+    text-shadow: 0 0 20px rgba(102, 252, 241, 0.5); /* Glow effect */
+}
+
+/* The Tagline */
+.brand-tagline {
+    font-size: 1.2rem;
+    color: #c5c6c7; /* Light grey */
+    text-transform: uppercase;
+    letter-spacing: 6px; /* Widens the letters for a "Cinematic" look */
+    margin-top: 15px;
+    font-weight: 500;
+    display: inline-block;
+    padding-top: 15px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .big-brand-title {
+        font-size: 3rem; /* Smaller on mobile */
+    }
+    .brand-tagline {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+    }
+}
+
+.about-text {
+    color: #c5c6c7; /* Light Grey text */
+    font-size: 1.1rem;
+    line-height: 1.6; /* Good spacing for readability */
+    text-align: center;
+    max-width: 800px; /* Prevents text from stretching too wide */
+    margin: 0 auto; /* Centers the block */
     padding: 20px;
 }
+
+.text-white {
+    color: #fff;
+    font-weight: 600;
+}/* --- The Flexbox Fix (Centers the orphan item) --- */
 
 .All-Grid {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for better responsiveness */
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
-    box-shadow: 10px 5px 20px rgba(0,0,0,0.1); /* Softened shadow */
-}
-
-
-@media (min-width: 601px) and (max-width: 750px) {
-    .All-Grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 751px) {
-    .All-Grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.topCommittee,
-.Programme,
-.PublicRelations,
-.Publicity,
-.Sponsorship,
-.Logistics,
-.Technical,
-.Design {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-image: linear-gradient(to bottom, white 0%, white 50%, transparent 50%, transparent 100%);
-    padding-bottom: 20px;
-    border-radius: 40px;
-
-    /*smooth animation settings*/
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.topCommittee:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-    background-image: linear-gradient(to bottom, #ffffff 0%, #e0f7fa 100%)
-}
-
-.imgBox {
-    width: 100%;
-    height: 150px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 10px;
+    gap: 30px;
 }
 
-.imgBox img {
-    height: 100%;
-    width: auto;
-    border-radius: 50%;
+/* --- Manager Profile Cards --- */
+.managerProfile {
+    flex: 0 1 280px; /* Width logic */
+    background: #fafafa;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
 }
 
-.description h5 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    color: #333;
+.managerProfile:hover {
+    transform: translateY(-8px);
+    border: 3px solid #66fcf1;
+
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(102, 252, 241, 0.6); /* Adds a slight neon glow to text */
+
+    transition: box-shadow 1s ease, transform 0.8s ease, border 0.3s ease;
 }
 
-.description p {
-    color: aliceblue;
+/* Image Styling */
+.managerProfile img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background-color: #ddd;
 }
 
+/* Text Info Styling */
+.info {
+    padding: 20px 15px 10px;
+}
 
-.CommitteeSocMed ul {
+.info h5 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.info p:first-of-type {
+    font-size: 0.9rem;
+    color: #72cad6;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.info p:last-of-type {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Social Media List */
+.ManagerSocMed {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 15px;
-    padding-top: 10px;
+    margin-top: 10px;
 }
 
-.CommitteeSocMed a {
+.ManagerSocMed a {
     text-decoration: none;
-    font-size: 24px;
-    transition: transform 0.2s;
+    font-size: 20px;
+    transition: transform 0.2s, opacity 0.2s;
 }
 
-.CommitteeSocMed a:hover {
+.ManagerSocMed a:hover {
     transform: scale(1.2);
+    opacity: 0.8;
+
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+
 }
 
-
+/* Specific Social Colors */
 .fa-facebook { color: #3b5998; }
-.fa-instagram { color: #8a3ab9; }
+.fa-instagram { color: #e1306c; }
 .fa-linkedin-square { color: #0077B5; }
 
-/* Search Bar */
-.search {
-    width: 100%;
-    display: flex;
-    align-items: center;
+/* --- Mobile Fixes --- */
+@media (max-width: 600px) {
+    .managerProfile {
+        flex: 1 1 100%;
+    }
+    .nav-links {
+        display: none;
+    }
 }
 
-.searchTerm {
-    width: 100%;
-    height: 36px;
-    padding: 5px;
-    border: 3px solid #72cad6;
-    border-right: none;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    color: #9DBFAF;
+.separator {
+    border: 0;
+    height: 1px;
+    background: #45a29e; /* Matches your border color */
+    background-image: linear-gradient(to right, #0b0c10, #66fcf1, #0b0c10); /* Neon fade effect */
+    margin: 40px auto; /* Centers the line and adds spacing */
+    max-width: 600px; /* Ensures line isn't too wide */
 }
 
-.searchTerm:focus {
-    color: #00B4CC;
+.separator2 {
+    border: 0;
+    height: 1px;
+    background: #45a29e; /* Matches your border color */
+    background-image: linear-gradient(to right, #0b0c10, #66fcf1, #0b0c10); /* Neon fade effect */
+    margin: 10px auto 1px; /* Centers the line and adds spacing */
+    max-width: 600px; /* Ensures line isn't too wide */
 }
 
-.searchButton {
-    width: 40px;
-    height: 36px;
-    border: 1px solid #72cad6;
-    background: #72cad6;
+.section-title {
     text-align: center;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-    font-size: 20px;
-    display: flex;           /* Centers the icon */
-    justify-content: center; /* Centers the icon */
-    align-items: center;     /* Centers the icon */
 }
 
-.Organizer {
-    position: sticky;
-    top: 20px;
-    z-index: 10;
-    text-align: left;
-    margin-left: 20px;
-    padding: 10px;
-    height: fit-content;
-    font-size: 18px;
-    color: #333;
-}
+/* Container for the two cards */
+/* 3. The Card Container */
+/* --- New Video Section Styles --- */
 
-.Organizer ul {
-    list-style: none;
+.video-section {
+    position: relative; /* Sets the boundaries */
+    width: 100%;
+    min-height: 60vh; /* Adjust height as needed */
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: center;
+    align-items: center; /* Centers the card perfectly */
+    overflow: hidden; /* Chops off excess video */
+    padding: 20px;
 }
 
-.Organizer a {
-    text-decoration: none;
-    color: #333;
-    display: block;
+.back-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Sits at the back */
+    object-fit: contain; /* Ensures video covers area without stretching */
+    object-position: center;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Darkens the video by 60% */
+    z-index: 1; /* Sits on top of video, below text */
+}
+
+/* --- Updating your Existing Card to be "Glass" --- */
+
+.MissionVision-container {
+    position: relative;
+    z-index: 2; /* Sits on top of everything */
+
+    /* CHANGE: Make background see-through */
+    background-color: rgba(31, 40, 51, 0.85); /* Semi-transparent dark blue */
+    backdrop-filter: blur(10px); /* Blurs the video behind the card */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+
+    /* Keep your existing styles */
+    color: #c5c6c7;
+    padding: 40px;
+    border-radius: 8px;
+    border: 1px solid #45a29e;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.MissionVision-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.4);
+}
+
+/* Headers styling */
+.MissionVision-container h2 {
+    color: #fff;
+    border-bottom: 2px solid #66fcf1;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Optional: Looks more "Gamer" */
+}
+
+/* Highlighted words */
+.highlight {
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6); /* Adds a slight neon glow to text */
 }

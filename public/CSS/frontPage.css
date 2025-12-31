@@ -63,19 +63,19 @@ nav {
     text-shadow: 0 0 5px rgba(102, 252, 241, 0.6);
 }
 
-/* Shared style for both Admin and Login buttons */
-.nav-pill-btn {
-    background-color: #0071e3;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 200px; /* Fully rounded pill shape */
-    text-decoration: none;
-    font-size: 13px;
-    transition: background-color 0.3s;
-    cursor: pointer;
-    border: none;
-    display: inline-block;
-}
+     /* Shared style for both Admin and Login buttons */
+ .nav-pill-btn {
+     background-color: #0071e3;
+     color: white;
+     padding: 8px 16px;
+     border-radius: 200px; /* Fully rounded pill shape */
+     text-decoration: none;
+     font-size: 13px;
+     transition: background-color 0.3s;
+     cursor: pointer;
+     border: none;
+     display: inline-block;
+ }
 .nav-pill-btn:hover {
     color: #66fcf1;
     font-weight: bold;
