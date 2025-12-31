@@ -8,80 +8,79 @@ http.createServer(function (request, response) {
 
     console.log('Server Requesting ' + request.url);
 
-    // --- HTML ROUTES ---
-    let htmlFile = '';
+    // --- MAGIC FIX: CLEAN THE URL ---
+    // This strips away "?type=phone" so we just get the filename "productPage.html"
+    const cleanUrl = request.url.split('?')[0];
+    const fileName = path.basename(cleanUrl);
 
-    if (request.url === "/" || request.url === "/frontPage.html") {
-        htmlFile = 'frontPage.html';
-    } else if (request.url === "/aboutPage.html") {
-        htmlFile = 'aboutPage.html';
-    } else if (request.url.startsWith("/productPage.html")) {
-        // .startsWith is needed because we will use queries like ?type=phone
-        htmlFile = 'productPage.html';
-    } else if (request.url === "/cartPage.html") {
-        htmlFile = 'cartPage.html';
+    // 1. HANDLE HOME PAGE
+    if (cleanUrl === "/" || cleanUrl === "/frontPage.html") {
+        const htmlPath = path.join(__dirname, 'public/HTML/frontPage.html');
+        serveFile(response, htmlPath, 'text/html');
     }
 
-    // If an HTML file was matched above, serve it
-    if (htmlFile) {
-        const htmlPath = path.join(__dirname, 'public/HTML', htmlFile);
-        fs.readFile(htmlPath, function (err, html) {
-            if (err) {
-                response.writeHead(404);
-                response.end("HTML File not found");
-            } else {
-                response.writeHead(200, {'Content-Type': 'text/html'});
-                response.end(html);
-            }
-        });
-        return; // Exit function so we don't check other types
+        // 2. HANDLE ALL OTHER HTML PAGES (Dynamic)
+    // This now works for "games.html", "aboutPage.html", AND "productPage.html?type=..."
+    else if (cleanUrl.endsWith(".html")) {
+        const htmlPath = path.join(__dirname, 'public/HTML', fileName);
+        serveFile(response, htmlPath, 'text/html');
     }
 
-    // --- CSS REQUESTS ---
-    if (request.url.includes(".css")) {
-        const cssFile = path.basename(request.url);
-        const cssPath = path.join(__dirname, 'public/CSS', cssFile);
-        fs.readFile(cssPath, function (err, css) {
-            if (err) {
-                response.writeHead(404);
-                response.end("CSS Not Found");
-            } else {
-                response.writeHead(200, {'Content-Type': 'text/css'});
-                response.end(css);
-            }
-        });
+    // 3. HANDLE CSS (Dynamic)
+    else if (cleanUrl.endsWith(".css")) {
+        const cssPath = path.join(__dirname, 'public/CSS', fileName);
+        serveFile(response, cssPath, 'text/css');
+    }
 
-        // --- JS REQUESTS ---
-    } else if (request.url.includes(".js")) {
-        const jsFile = path.basename(request.url);
-        const jsPath = path.join(__dirname, 'public/JavaScript', jsFile);
-        fs.readFile(jsPath, function (err, js) {
-            if (err) {
-                response.writeHead(404);
-                response.end("JS Not Found");
-            } else {
-                response.writeHead(200, {'Content-Type': 'text/javascript'});
-                response.end(js);
-            }
-        });
+    // 4. HANDLE JAVASCRIPT (Dynamic)
+    else if (cleanUrl.endsWith(".js")) {
+        const jsPath = path.join(__dirname, 'public/JavaScript', fileName);
+        serveFile(response, jsPath, 'text/javascript');
+    }
 
-        // --- IMAGE REQUESTS ---
-    } else if (request.url.match(/\.(jpg|jpeg|png|webp|gif)$/)) {
-        const imgPath = path.join(__dirname, 'public/img', path.basename(request.url));
-        fs.readFile(imgPath, function(err, content) {
-            if (err) {
-                response.writeHead(404);
-                response.end("Image not found");
-            } else {
-                response.writeHead(200);
-                response.end(content);
-            }
-        });
-    } else {
+    // 5. HANDLE IMAGES (Dynamic)
+    else if (cleanUrl.match(/\.(jpg|jpeg|png|webp|gif|svg)$/i)) {
+        const imgPath = path.join(__dirname, 'public/img', fileName);
+
+        // Determine image type
+        const ext = path.extname(imgPath).toLowerCase();
+        let contentType = 'image/jpeg';
+        if (ext === '.png') contentType = 'image/png';
+        if (ext === '.webp') contentType = 'image/webp';
+        if (ext === '.gif') contentType = 'image/gif';
+        if (ext === '.svg') contentType = 'image/svg+xml';
+
+        serveFile(response, imgPath, contentType);
+    }
+
+    // 6. HANDLE VIDEO
+    else if (cleanUrl.endsWith(".mp4")) {
+        const vidPath = path.join(__dirname, 'public/vid', fileName);
+        serveFile(response, vidPath, 'video/mp4');
+    }
+
+    // 7. 404 ERROR
+    else {
+        console.log("404 Error: " + request.url);
         response.writeHead(404);
         response.end("404 Not Found");
     }
 
 }).listen(8081, '0.0.0.0');
+
+// --- HELPER FUNCTION TO READ FILES ---
+// This saves us from writing "fs.readFile" 6 different times
+function serveFile(response, filePath, contentType) {
+    fs.readFile(filePath, function (err, content) {
+        if (err) {
+            console.error(`Error serving ${filePath}: ${err.message}`);
+            response.writeHead(404);
+            response.end("File not found");
+        } else {
+            response.writeHead(200, {'Content-Type': contentType});
+            response.end(content);
+        }
+    });
+}
 
 console.log('Server running at http://127.0.0.1:8081/');

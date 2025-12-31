@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaki Gamerz - Digital Store</title>
+    <link rel="stylesheet" href="../CSS/gamesPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-content">
+        <a href="/" class="logo">Kaki Gamerz</a>
+        <div class="nav-links">
+            <a href="/" style="color: #ccc; text-decoration: none; margin-right: 20px;">Home</a>
+            <a href="cartPage.html" style="color: #0071e3; font-weight: bold;">
+                Cart (<span id="cart-count">0</span>)
+            </a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-content">
+        <span class="badge-hot">Top Seller</span>
+        <h1>ELDEN RING: Shadow of the Erdtree</h1>
+        <p>Dive into the expansion of the year. The Land of Shadow awaits.</p>
+        <div class="hero-price">
+            <span class="discount">-15%</span>
+            <span class="price-old">RM 169.00</span>
+            <span class="price-new">RM 143.65</span>
+        </div>
+        <button class="btn-hero" onclick="addToCartDirect('Elden Ring: Shadow of the Erdtree', 143.65, 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070')">
+            Add to Cart
+        </button>
+    </div>
+    <div class="hero-bg"></div>
+</header>
+
+<div class="container">
+    <h2 class="section-title">Latest Games</h2>
+
+    <div class="game-grid">
+
+        <div class="game-card">
+            <div class="card-image">
+                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/2511/19ad6574090b6a71c88f0e6152ae5a668cc85882d87c51b5.png" alt="Game">
+                <span class="discount-badge">-20%</span>
+            </div>
+            <div class="card-info">
+                <h3 class="game-title">EA Sports FC 26</h3>
+                <div class="price-row">
+                    <span class="price-old">RM 239.00</span>
+                    <span class="price-new">RM 191.20</span>
+                </div>
+                <button class="btn-add" onclick="addToCartDirect('EA Sports FC 26', 191.20, 'https://image.api.playstation.com/vulcan/ap/rnd/202507/2511/19ad6574090b6a71c88f0e6152ae5a668cc85882d87c51b5.png')">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <div class="card-image">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg" alt="Game">
+                <span class="discount-badge">-50%</span>
+            </div>
+            <div class="card-info">
+                <h3 class="game-title">Cyberpunk 2077</h3>
+                <div class="price-row">
+                    <span class="price-old">RM 219.00</span>
+                    <span class="price-new">RM 109.50</span>
+                </div>
+                <button class="btn-add" onclick="addToCartDirect('Cyberpunk 2077', 109.50, 'https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg')">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <div class="card-image">
+                <img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops7/play-now/CHIMERA_PlayNow_KeyArt_Vault.webp" alt="Game">
+                <span class="discount-badge new">NEW</span>
+            </div>
+            <div class="card-info">
+                <h3 class="game-title">Call of Duty: BO7</h3>
+                <div class="price-row">
+                    <span class="price-new">RM 299.00</span>
+                </div>
+                <button class="btn-add" onclick="addToCartDirect('Call of Duty: BO7', 299.00, 'https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops7/play-now/CHIMERA_PlayNow_KeyArt_Vault.webp')">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <div class="card-image">
+                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg" alt="Game">
+                <span class="discount-badge">-10%</span>
+            </div>
+            <div class="card-info">
+                <h3 class="game-title">Spider-Man 2</h3>
+                <div class="price-row">
+                    <span class="price-old">RM 249.00</span>
+                    <span class="price-new">RM 224.10</span>
+                </div>
+                <button class="btn-add" onclick="addToCartDirect('Spider-Man 2', 224.10, 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg')">
+                    Add to Cart
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // 1. Check Cart Count on Load
+    function updateCartCount() {
+        const cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
+        document.getElementById('cart-count').innerText = cart.length;
+    }
+    updateCartCount();
+
+    // 2. The Direct Add Function
+    function addToCartDirect(name, price, imgUrl) {
+        // Create the item object
+        const newItem = {
+            id: Date.now(),
+            name: name,
+            price: price,
+            img: imgUrl,
+            details: "Standard Edition", // Default for quick add
+            color: "N/A",
+            size: "Standard"
+        };
+
+        // Get existing cart
+        let cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
+
+        // Add new item
+        cart.push(newItem);
+
+        // Save back to storage
+        localStorage.setItem('kakiCart', JSON.stringify(cart));
+
+        // Visual Feedback
+        alert(name + " added to your cart!");
+        updateCartCount();
+    }
+</script>
+
+</body>
+</html>

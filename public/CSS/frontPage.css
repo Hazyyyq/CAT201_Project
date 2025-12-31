@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -41,6 +42,13 @@ nav {
 
 }
 
+.logo:hover {
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6);
+}
+
+
 .nav-links a {
     color: #d6d6d6;
     text-decoration: none;
@@ -50,7 +58,28 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #fff
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6);
+}
+
+/* Shared style for both Admin and Login buttons */
+.nav-pill-btn {
+    background-color: #0071e3;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 200px; /* Fully rounded pill shape */
+    text-decoration: none;
+    font-size: 13px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+.nav-pill-btn:hover {
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6);
 }
 
 .search-box i {
@@ -60,7 +89,8 @@ nav {
 
 .hero-section {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -129,7 +159,9 @@ nav {
 }
 
 .btn-blue:hover {
-    background-color: #0077ed;
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6);
 }
 
 .btn-outline {
@@ -138,7 +170,9 @@ nav {
 }
 
 .btn-outline:hover {
-    background-color: rgba(0, 113, 227, 0.1);
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6);
 }
 
 .btn-outline-dark {
@@ -195,7 +229,9 @@ nav {
 }
 
 .link:hover {
-    text-decoration: underline;
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6);
 }
 
 .grid-item img {
@@ -214,4 +250,27 @@ nav {
 .reveal.active {
     transform: translateY(0);
     opacity: 1;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-btn {
+    background-color: #0071e3;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    color: #66fcf1;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6);
 }

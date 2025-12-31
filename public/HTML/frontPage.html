@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kaki Gamerz - Store</title>
-  <link rel="stylesheet" href="../CSS/frontPage.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaki Gamerz - Store</title>
+    <link rel="stylesheet" href="../CSS/frontPage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="/frontPage.js" defer ></script>
 
 </head>
 
@@ -22,7 +24,7 @@
             <a href="productPage.html?type=phone">Phone</a>
             <a href="productPage.html?type=watch">Watch</a>
             <a href="productPage.html?type=tablet">Tablet</a>
-            <a href="#">Games</a>
+            <a href="gamesPage.html">Games</a>
             <a href="aboutPage.html">About Us</a>
 
             <a href="cartPage.html" style="color: #0071e3; font-weight: bold;">
@@ -31,9 +33,14 @@
 
         </div>
 
+        <div class="nav-right">
+            <a href="adminPageDesign.html" class="nav-pill-btn">Admin Panel</a>
+            <a href="login.html" class="nav-pill-btn">Login</a>
+        </div>
+
+
         <div class="search-box">
             <i class="fa fa-search"></i>
-
         </div>
     </div>
 </nav>
@@ -62,7 +69,7 @@
 
         <div class="cta-links">
             <a href="#" class="btn btn-blue">Learn More</a>
-            <a href="productPage.html?type=watch" class="btn btn-outline-dark">Buy</a>
+            <a href="#" class="btn btn-outline-dark">Buy</a>
         </div>
     </div>
 
@@ -78,7 +85,7 @@
 
         <div class="cta-links">
             <a href="#" class="btn btn-blue">Learn more</a>
-            <a href="productPage.html?type=tablet" class="btn btn-outline">Buy</a>
+            <a href="#" class="btn btn-outline">Buy</a>
         </div>
     </div>
 
@@ -91,7 +98,7 @@
     <div class="grid-item reveal">
         <h2 class="grid-title">Latest Games</h2>
         <p class="grid-desc">Console & PC Titles.</p>
-        <a href="#" class="link">See the library</a>
+        <a href="gamesPage.html" class="link">See the library</a>
         <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070&auto=format&fit=crop"
              alt="Gaming">
     </div>
@@ -105,33 +112,5 @@
     </div>
 </div>
 
-
-<script>
-    window.addEventListener('scroll', reveal);
-
-    function reveal(){
-        var reveals= document.querySelectorAll('.reveal');
-        for (var i=0; i< reveals.length; i++){
-            var windowheight = window.innerHeight;
-            var revealtop = reveals[i].getBoundingClientRect().top;
-            var revealpoint= 100;
-            if(revealtop < windowheight - revealpoint){
-                reveals[i].classList.add('active');
-            }
-        }
-    }
-    reveal();
-
-    function updateFrontCartCount() {
-        const cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
-        const countSpan = document.getElementById('front-cart-count');
-        if(countSpan) {
-            countSpan.innerText = cart.length;
-        }
-    }
-
-    // Run immediately when page loads
-    updateFrontCartCount();
-</script>
 </body>
 </html>
