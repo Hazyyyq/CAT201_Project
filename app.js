@@ -24,19 +24,6 @@ http.createServer(function (request, response) {
         const htmlPath = path.join(__dirname, 'public/HTML', fileName);
         serveFile(response, htmlPath, 'text/html');
     }
-        fs.readFile(htmlPath, function (err, html) {
-            if (err) {
-                console.error("HTML Error: " + err.message);
-                response.writeHead(404);
-                response.end("Front Page not found");
-            } else {
-                response.writeHead(200, {'Content-Type': 'text/html'});
-                response.end(html);
-            }
-        });
-    } else if (request.url.endsWith(".html")) {
-        const htmlFile = path.basename(request.url);
-        const htmlPath = path.join(__dirname, 'public/HTML', htmlFile);
 
     // 3. HANDLE CSS (Dynamic)
     else if (cleanUrl.endsWith(".css")) {
@@ -70,9 +57,8 @@ http.createServer(function (request, response) {
         serveFile(response, vidPath, 'video/mp4');
     }
 
-    // 7. HANDLE JSON DATA (NEW! - THIS IS REQUIRED FOR GAMES)
+    // 7. HANDLE JSON DATA (For Games)
     else if (cleanUrl.endsWith(".json")) {
-        // We look inside public/data folder
         const jsonPath = path.join(__dirname, 'public/data', fileName);
         serveFile(response, jsonPath, 'application/json');
     }
@@ -87,6 +73,7 @@ http.createServer(function (request, response) {
 }).listen(8081, '0.0.0.0');
 
 // --- HELPER FUNCTION ---
+// This handles reading the file and sending it to the browser
 function serveFile(response, filePath, contentType) {
     fs.readFile(filePath, function (err, content) {
         if (err) {

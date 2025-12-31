@@ -52,7 +52,7 @@
 
 <script>
     // --- SETTINGS ---
-    const itemsPerPage = 4;
+    const itemsPerPage = 8;
 
     let allGames = [];
     let currentPage = 1;
@@ -165,7 +165,6 @@
         let cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
         cart.push(newItem);
         localStorage.setItem('kakiCart', JSON.stringify(cart));
-        alert(name + " added to your cart!");
         updateCartCount();
     }
 </script>

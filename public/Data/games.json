@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "name": "Grand Theft Auto v",
+    "name": "Grand Theft Auto V",
     "price": 59.07,
     "oldPrice": 179.00,
     "image": "https://cdn1.epicgames.com/offer/b0cd075465c44f87be3b505ac04a2e46/GTAV_CHARM_Epic_FirstParty_PortraitFOB_1200x1600_R02_1200x1600-a5528b33df876e64f5dee728830c80a3",
@@ -41,10 +41,154 @@
   },
   {
     "id": 6,
-    "name": "Spiderman 1",
-    "price": 27.09,
-    "oldPrice": 129.00,
+    "name": "Spider-Man Remastered",
+    "price": 129.00,
+    "oldPrice": 249.00,
     "image": "https://upload.wikimedia.org/wikipedia/en/e/e1/Spider-Man_PS4_cover.jpg",
-    "badge": "-79%"
+    "badge": "-48%"
+  },
+  {
+    "id": 7,
+    "name": "Mobile Legends: Bang Bang",
+    "price": 67.67,
+    "oldPrice": 120.00,
+    "image": "https://cdn.prod.website-files.com/65956e2711516206d2d1258f/67d16acac5515372f3f3af70_MLBB%20rank%20cover.webp",
+    "badge": "-44%"
+  },
+  {
+    "id": 8,
+    "name": "Elden Ring",
+    "price": 169.00,
+    "oldPrice": 239.00,
+    "image": "https://assets.nuuvem.com/image/upload/t_boxshot_big/v1/products/618418052f91a002e3f9cf6b/boxshots/ypixsauz1khblwwjea8t.jpg",
+    "badge": "-29%"
+  },
+  {
+    "id": 9,
+    "name": "Red Dead Redemption 2",
+    "price": 95.00,
+    "oldPrice": 219.00,
+    "image": "https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png",
+    "badge": "-56%"
+  },
+  {
+    "id": 10,
+    "name": "God of War Ragnarok",
+    "price": 209.00,
+    "oldPrice": 249.00,
+    "image": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2322010/header.jpg?t=1750909504",
+    "badge": "-16%"
+  },
+  {
+    "id": 11,
+    "name": "Black Myth: Wukong",
+    "price": 299.00,
+    "oldPrice": null,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2122/f72cb871e50c5d2bcda714b0cebcc772d920629dae3304dc.png",
+    "badge": "HOT"
+  },
+  {
+    "id": 12,
+    "name": "Helldivers 2",
+    "price": 169.00,
+    "oldPrice": null,
+    "image": "https://m.media-amazon.com/images/I/61k+kwN16PL._AC_UF1000,1000_QL80_.jpg",
+    "badge": "POPULAR"
+  },
+  {
+    "id": 13,
+    "name": "Baldur's Gate 3",
+    "price": 220.00,
+    "oldPrice": 259.00,
+    "image": "https://store-images.s-microsoft.com/image/apps.11593.13550459053619040.9c555c73-a698-4992-b0f3-c5084cf18b5e.82a9ea41-c628-4d02-8a0f-d0304eba31c7",
+    "badge": "-15%"
+  },
+  {
+    "id": 14,
+    "name": "The Witcher 3: Wild Hunt",
+    "price": 45.00,
+    "oldPrice": 129.00,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202211/0711/kh4MUIuMmHlktOHar3lVl6rY.png",
+    "badge": "-65%"
+  },
+  {
+    "id": 15,
+    "name": "Hogwarts Legacy",
+    "price": 180.00,
+    "oldPrice": 299.00,
+    "image": "https://cdn1.epicgames.com/offer/e97659b501af4e3981d5430dad170911/EGS_HogwartsLegacy_AvalancheSoftware_S2_1200x1600-bb9f789b6628ff2aa935f06f5e0f218a",
+    "badge": "-40%"
+  },
+  {
+    "id": 16,
+    "name": "Final Fantasy VII Rebirth",
+    "price": 289.00,
+    "oldPrice": null,
+    "image": "https://cdn1.epicgames.com/offer/e9a679451d094c1ba3d008b6a01adec5/EGS_FINALFANTASYVIIREBIRTH_SquareEnix_S2_1200x1600-7708f856b86bea9ac254780e78deb3cf",
+    "badge": "NEW"
+  },
+  {
+    "id": 17,
+    "name": "Resident Evil 4 Remake",
+    "price": 149.00,
+    "oldPrice": 229.00,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202210/0712/cWZlv5HCWi4sGKuwVRO4c8Xg.png",
+    "badge": "-35%"
+  },
+  {
+    "id": 18,
+    "name": "The Last of Us Part I",
+    "price": 199.00,
+    "oldPrice": 249.00,
+    "image": "https://cdn1.epicgames.com/offer/0c40923dd1174a768f732a3b013dcff2/EGS_TheLastofUsPartI_NaughtyDogLLC_S2_1200x1600-41d1b88814bea2ee8cb7986ec24713e0",
+    "badge": "-20%"
+  },
+  {
+    "id": 19,
+    "name": "Tekken 8",
+    "price": 259.00,
+    "oldPrice": 299.00,
+    "image": "https://gaming-cdn.com/images/products/15746/380x218/tekken-8-deluxe-edition-deluxe-edition-xbox-series-x-s-game-microsoft-store-cover.jpg?v=1744297174",
+    "badge": "-13%"
+  },
+  {
+    "id": 20,
+    "name": "Street Fighter 6",
+    "price": 189.00,
+    "oldPrice": 249.00,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1408/zGQ4MSI0Mzw2nFxZokDpHXxk.png",
+    "badge": "-24%"
+  },
+  {
+    "id": 21,
+    "name": "The Last of Us Part II",
+    "price": 299.00,
+    "oldPrice": null,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202312/0117/315718bce7eed62e3cf3fb02d61b81ff1782d6b6cf850fa4.png",
+    "badge": "HOT"
+  },
+  {
+    "id": 22,
+    "name": "Star Wars Jedi: Survivor",
+    "price": 139.00,
+    "oldPrice": 279.00,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202304/1016/d3301d4f55e2eb38bfe3b5cb3274fcc601902eacbd947b6a.png",
+    "badge": "-50%"
+  },
+  {
+    "id": 23,
+    "name": "Minecraft: Java & Bedrock",
+    "price": 119.00,
+    "oldPrice": null,
+    "image": "https://images.g2a.com/360x600/1x1x1/minecraft-java-bedrock-edition-pc-microsoft-store-key-global-i10000326476001/b2b8cb146e9447d9af4613dd",
+    "badge": "BESTSELLER"
+  },
+  {
+    "id": 24,
+    "name": "Palworld",
+    "price": 89.00,
+    "oldPrice": 110.00,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2108/a9c0fb99b704bfd04e85512a280acaf9a19901c8548b6792.png",
+    "badge": "-19%"
   }
 ]
