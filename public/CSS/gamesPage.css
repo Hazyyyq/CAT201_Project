@@ -85,3 +85,32 @@ nav { background: #1a1a1a; height: 60px; display: flex; align-items: center; bor
     transition: 0.2s;
 }
 .game-card:hover .btn-add { background: #ff6a00; border-color: #ff6a00; color: white; }
+
+/* Pagination Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0;
+}
+
+.page-btn {
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 1px solid #333;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.page-btn:hover {
+    background-color: #333;
+}
+
+.page-btn.active {
+    background-color: #ff6a00; /* Orange highlight for current page */
+    border-color: #ff6a00;
+    color: black;
+}

@@ -19,8 +19,7 @@ http.createServer(function (request, response) {
         serveFile(response, htmlPath, 'text/html');
     }
 
-        // 2. HANDLE ALL OTHER HTML PAGES (Dynamic)
-    // This now works for "games.html", "aboutPage.html", AND "productPage.html?type=..."
+    // 2. HANDLE ALL OTHER HTML PAGES (Dynamic)
     else if (cleanUrl.endsWith(".html")) {
         const htmlPath = path.join(__dirname, 'public/HTML', fileName);
         serveFile(response, htmlPath, 'text/html');
@@ -42,7 +41,6 @@ http.createServer(function (request, response) {
     else if (cleanUrl.match(/\.(jpg|jpeg|png|webp|gif|svg)$/i)) {
         const imgPath = path.join(__dirname, 'public/img', fileName);
 
-        // Determine image type
         const ext = path.extname(imgPath).toLowerCase();
         let contentType = 'image/jpeg';
         if (ext === '.png') contentType = 'image/png';
@@ -59,7 +57,14 @@ http.createServer(function (request, response) {
         serveFile(response, vidPath, 'video/mp4');
     }
 
-    // 7. 404 ERROR
+    // 7. HANDLE JSON DATA (NEW! - THIS IS REQUIRED FOR GAMES)
+    else if (cleanUrl.endsWith(".json")) {
+        // We look inside public/data folder
+        const jsonPath = path.join(__dirname, 'public/data', fileName);
+        serveFile(response, jsonPath, 'application/json');
+    }
+
+    // 8. 404 ERROR
     else {
         console.log("404 Error: " + request.url);
         response.writeHead(404);
@@ -68,8 +73,7 @@ http.createServer(function (request, response) {
 
 }).listen(8081, '0.0.0.0');
 
-// --- HELPER FUNCTION TO READ FILES ---
-// This saves us from writing "fs.readFile" 6 different times
+// --- HELPER FUNCTION ---
 function serveFile(response, filePath, contentType) {
     fs.readFile(filePath, function (err, content) {
         if (err) {

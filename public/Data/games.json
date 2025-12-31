@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "EA Sports FC 26",
+    "price": 191.20,
+    "oldPrice": 239.00,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202507/2511/19ad6574090b6a71c88f0e6152ae5a668cc85882d87c51b5.png",
+    "badge": "-20%"
+  },
+  {
+    "id": 2,
+    "name": "Cyberpunk 2077",
+    "price": 109.50,
+    "oldPrice": 219.00,
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg",
+    "badge": "-50%"
+  },
+  {
+    "id": 3,
+    "name": "Call of Duty: BO7",
+    "price": 299.00,
+    "oldPrice": null,
+    "image": "https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops7/play-now/CHIMERA_PlayNow_KeyArt_Vault.webp",
+    "badge": "NEW"
+  },
+  {
+    "id": 4,
+    "name": "Spider-Man 2",
+    "price": 224.10,
+    "oldPrice": 249.00,
+    "image": "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg",
+    "badge": "-10%"
+  },
+  {
+    "id": 5,
+    "name": "Grand Theft Auto v",
+    "price": 59.07,
+    "oldPrice": 179.00,
+    "image": "https://cdn1.epicgames.com/offer/b0cd075465c44f87be3b505ac04a2e46/GTAV_CHARM_Epic_FirstParty_PortraitFOB_1200x1600_R02_1200x1600-a5528b33df876e64f5dee728830c80a3",
+    "badge": "-67%"
+  },
+  {
+    "id": 6,
+    "name": "Spiderman 1",
+    "price": 27.09,
+    "oldPrice": 129.00,
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/e1/Spider-Man_PS4_cover.jpg",
+    "badge": "-79%"
+  }
+]

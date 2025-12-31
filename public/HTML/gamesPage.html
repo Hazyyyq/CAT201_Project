@@ -42,109 +42,129 @@
 <div class="container">
     <h2 class="section-title">Latest Games</h2>
 
-    <div class="game-grid">
+    <div class="game-grid" id="game-grid-container">
+        <p style="color:white">Loading games...</p>
+    </div>
 
-        <div class="game-card">
-            <div class="card-image">
-                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202507/2511/19ad6574090b6a71c88f0e6152ae5a668cc85882d87c51b5.png" alt="Game">
-                <span class="discount-badge">-20%</span>
-            </div>
-            <div class="card-info">
-                <h3 class="game-title">EA Sports FC 26</h3>
-                <div class="price-row">
-                    <span class="price-old">RM 239.00</span>
-                    <span class="price-new">RM 191.20</span>
-                </div>
-                <button class="btn-add" onclick="addToCartDirect('EA Sports FC 26', 191.20, 'https://image.api.playstation.com/vulcan/ap/rnd/202507/2511/19ad6574090b6a71c88f0e6152ae5a668cc85882d87c51b5.png')">
-                    Add to Cart
-                </button>
-            </div>
-        </div>
-
-        <div class="game-card">
-            <div class="card-image">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg" alt="Game">
-                <span class="discount-badge">-50%</span>
-            </div>
-            <div class="card-info">
-                <h3 class="game-title">Cyberpunk 2077</h3>
-                <div class="price-row">
-                    <span class="price-old">RM 219.00</span>
-                    <span class="price-new">RM 109.50</span>
-                </div>
-                <button class="btn-add" onclick="addToCartDirect('Cyberpunk 2077', 109.50, 'https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg')">
-                    Add to Cart
-                </button>
-            </div>
-        </div>
-
-        <div class="game-card">
-            <div class="card-image">
-                <img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops7/play-now/CHIMERA_PlayNow_KeyArt_Vault.webp" alt="Game">
-                <span class="discount-badge new">NEW</span>
-            </div>
-            <div class="card-info">
-                <h3 class="game-title">Call of Duty: BO7</h3>
-                <div class="price-row">
-                    <span class="price-new">RM 299.00</span>
-                </div>
-                <button class="btn-add" onclick="addToCartDirect('Call of Duty: BO7', 299.00, 'https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/blackops7/play-now/CHIMERA_PlayNow_KeyArt_Vault.webp')">
-                    Add to Cart
-                </button>
-            </div>
-        </div>
-
-        <div class="game-card">
-            <div class="card-image">
-                <img src="https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg" alt="Game">
-                <span class="discount-badge">-10%</span>
-            </div>
-            <div class="card-info">
-                <h3 class="game-title">Spider-Man 2</h3>
-                <div class="price-row">
-                    <span class="price-old">RM 249.00</span>
-                    <span class="price-new">RM 224.10</span>
-                </div>
-                <button class="btn-add" onclick="addToCartDirect('Spider-Man 2', 224.10, 'https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/60eca3ac155247e21850c7d075d01ebf0f3f5dbf19ccd2a1.jpg')">
-                    Add to Cart
-                </button>
-            </div>
-        </div>
-
+    <div class="pagination" id="pagination-controls">
     </div>
 </div>
 
 <script>
-    // 1. Check Cart Count on Load
+    // --- SETTINGS ---
+    const itemsPerPage = 4;
+
+    let allGames = [];
+    let currentPage = 1;
+
+    // 1. Fetch the JSON data
+    fetch('/games.json')
+        .then(response => response.json())
+        .then(games => {
+            allGames = games;
+            displayList(allGames, document.getElementById('game-grid-container'), itemsPerPage, currentPage);
+            setupPagination(allGames, document.getElementById('pagination-controls'), itemsPerPage);
+        })
+        .catch(err => console.error("Error loading games:", err));
+
+
+    // 2. Display the Games for the specific Page
+    function displayList(items, wrapper, rows_per_page, page) {
+        wrapper.innerHTML = "";
+        page--;
+
+        let start = rows_per_page * page;
+        let end = start + rows_per_page;
+        let paginatedItems = items.slice(start, end);
+
+        paginatedItems.forEach(game => {
+            let badgeClass = 'discount-badge';
+            if(game.badge === 'NEW') badgeClass += ' new';
+
+            let oldPriceHTML = '';
+            if(game.oldPrice) {
+                oldPriceHTML = `<span class="price-old">RM ${game.oldPrice.toFixed(2)}</span>`;
+            }
+
+            const cardHTML = `
+                <div class="game-card">
+                    <div class="card-image">
+                        <img src="${game.image}" alt="${game.name}">
+                        <span class="${badgeClass}">${game.badge}</span>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="game-title">${game.name}</h3>
+                        <div class="price-row">
+                            ${oldPriceHTML}
+                            <span class="price-new">RM ${game.price.toFixed(2)}</span>
+                        </div>
+                        <button class="btn-add" onclick="addToCartDirect('${game.name}', ${game.price}, '${game.image}')">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            `;
+            wrapper.innerHTML += cardHTML;
+        });
+    }
+
+    // 3. Create Page Buttons (1, 2, 3...)
+    function setupPagination(items, wrapper, rows_per_page) {
+        wrapper.innerHTML = "";
+        let page_count = Math.ceil(items.length / rows_per_page);
+
+        // Don't show buttons if only 1 page
+        if(page_count < 2) return;
+
+        for (let i = 1; i < page_count + 1; i++) {
+            let btn = paginationButton(i, items);
+            wrapper.appendChild(btn);
+        }
+    }
+
+    function paginationButton(page, items) {
+        let button = document.createElement('button');
+        button.innerText = page;
+        button.classList.add('page-btn');
+
+        if (currentPage == page) button.classList.add('active');
+
+        button.addEventListener('click', function () {
+            currentPage = page;
+            displayList(items, document.getElementById('game-grid-container'), itemsPerPage, currentPage);
+
+            // Update Active Class
+            let current_btn = document.querySelector('.page-btn.active');
+            if(current_btn) current_btn.classList.remove('active');
+            button.classList.add('active');
+
+            // Optional: Scroll to top of grid
+            document.querySelector('.container').scrollIntoView({behavior: 'smooth'});
+        });
+
+        return button;
+    }
+
+    // 4. Cart Logic
     function updateCartCount() {
         const cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
         document.getElementById('cart-count').innerText = cart.length;
     }
     updateCartCount();
 
-    // 2. The Direct Add Function
     function addToCartDirect(name, price, imgUrl) {
-        // Create the item object
         const newItem = {
             id: Date.now(),
             name: name,
             price: price,
             img: imgUrl,
-            details: "Standard Edition", // Default for quick add
+            details: "Standard Edition",
             color: "N/A",
             size: "Standard"
         };
-
-        // Get existing cart
         let cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
-
-        // Add new item
         cart.push(newItem);
-
-        // Save back to storage
         localStorage.setItem('kakiCart', JSON.stringify(cart));
-
-        // Visual Feedback
         alert(name + " added to your cart!");
         updateCartCount();
     }
