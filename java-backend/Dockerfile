@@ -18,6 +18,8 @@ FROM tomcat:10.1-jdk17
 # Remove default Tomcat example apps to keep it clean
 RUN rm -rf /usr/local/tomcat/webapps/*
 
+RUN sed -i 's/port="8005"/port="-1"/' /usr/local/tomcat/conf/server.xml
+
 # Copy your built WAR file to Tomcat
 # We rename it to 'ROOT.war' so your API is at "https://url.com/api"
 # instead of "https://url.com/backend-1.0-SNAPSHOT/api"
