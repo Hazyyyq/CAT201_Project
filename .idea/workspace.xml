@@ -4,26 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e7f99b-0edd-44c9-9cee-aee7cf954985" name="Changes" comment="add Java Servlet">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a0e7f99b-0edd-44c9-9cee-aee7cf954985" name="Changes" comment="Fix backend integration between pages">
+      <change afterPath="$PROJECT_DIR$/java-backend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-backend/src/Data/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/Data/products.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/CheckoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/OrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/Checkout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CheckoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CheckoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/OrderRequest$CartItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/OrderRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/AdminPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/AdminPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/GamePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/GamePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/ProductPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/ProductPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/style/AdminPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/style/AdminPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/style/AuthPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/style/AuthPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/style/GamePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/style/GamePage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/style/ProductPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/style/ProductPage.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +21,7 @@
         <option value="CSS File" />
         <option value="package.json" />
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -177,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768024854991</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix backend integration between pages">
+      <option name="closed" value="true" />
+      <created>1768058796631</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1768058796631</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +190,7 @@
     <MESSAGE value="Change airil name" />
     <MESSAGE value="change directory of games.json DATA" />
     <MESSAGE value="add Java Servlet" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Java Servlet" />
+    <MESSAGE value="Fix backend integration between pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix backend integration between pages" />
   </component>
 </project>
