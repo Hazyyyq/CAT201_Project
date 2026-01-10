@@ -112,7 +112,7 @@ const ProductPage = () => {
         cart.push(newItem);
         localStorage.setItem('kakiCart', JSON.stringify(cart));
         setCartCount(cart.length);
-        alert(`Added ${product.name} to your bag.`);
+
     };
 
     if (loading) return <div style={{height: '100vh', color: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Loading...</div>;

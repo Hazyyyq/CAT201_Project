@@ -159,14 +159,13 @@ const AdminPage = () => {
                 KAKI GAMERZ-ADMIN<span className="dot"></span>
             </Link>
 
-            <div className="nav-links desktop-menu">
+            {/* --- ADDED style={{ marginLeft: 'auto' }} TO PUSH LINKS RIGHT --- */}
+            <div className="nav-links desktop-menu" style={{ marginLeft: 'auto', display: 'flex', gap: '30px', paddingRight: '20px' }}>
                 <Link to="/">Store Front</Link>
                 <a href="#" className="active">Inventory</a>
-                <a href="#">Orders</a>
             </div>
 
             <div className="nav-actions">
-                <div className={styles['admin-badge']}>Admin Mode</div>
             </div>
 
             <div className="sidebar" onClick={() => setIsOpen(!isOpen)}>
