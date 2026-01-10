@@ -4,50 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e7f99b-0edd-44c9-9cee-aee7cf954985" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/react-frontend/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/eslint.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/Aiman.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/Airil.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/Haziq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/Johan.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/test.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/public/vid/GravitiGamerz.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/public/vid/GravitiGamerz_2.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/public/vid/intro.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/Data/games.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/PinPagePosition.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/assets/react.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/components/Footer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/main.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/AboutPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/AdminPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/CartPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/FrontPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/GamePage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/LoginPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/ProductPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/SignUpPage.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/AboutPage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/AdminPage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/AuthPage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/CartPage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/Footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/FrontPage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/GamePage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/ProductPage.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/react-frontend/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/CSS/aboutPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/CSS/aboutPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/HTML/adminPageDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/HTML/adminPageDesign.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/HTML/cartPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/HTML/cartPage.html" afterDir="false" />
+    <list default="true" id="a0e7f99b-0edd-44c9-9cee-aee7cf954985" name="Changes" comment="Add docker file">
+      <change beforePath="$PROJECT_DIR$/public/CSS/aboutPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/CSS/adminPageDesign.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/CSS/auth.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/CSS/frontPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/CSS/gamesPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/CSS/productPage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Data/games.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/HTML/aboutPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/HTML/adminPageDesign.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/HTML/cartPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/HTML/frontPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/HTML/gamesPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/HTML/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/HTML/productPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/HTML/signUp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/JavaScript/adminPageDesign.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/JavaScript/frontPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/JavaScript/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/kakiGamerz.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/img/test.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vid/GravitiGamerz.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/vid/GravitiGamerz_2.mp4" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +39,9 @@
         <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="package.json" />
+        <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -106,6 +88,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.Unnamed.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.cartPage.html.executor": "Run",
     "JavaScript Debug.frontPage.html.executor": "Run",
@@ -116,26 +100,46 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "haziq/fix/node.js-to-react.js",
+    "git-widget-placeholder": "haziq/backend/adding-java-servlet",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/haziq/Downloads/ComputerSciences/SEM 3/CAT201/IntelliJ/Assignmen_JoZiq/CAT201_Project/react-frontend/src",
+    "last_opened_file_path": "C:/Users/haziq/Downloads/ComputerSciences/SEM 3/CAT201/IntelliJ/Assignmen_JoZiq/CAT201_Project/java-backend",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\java-backend" />
       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\react-frontend\src" />
       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\react-frontend\src\style" />
       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\react-frontend\src\pages" />
       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\java-backend\src\Data" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.kakigamerz.Main" />
+      <module name="backend" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/java-backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -169,14 +173,69 @@
       <option name="project" value="LOCAL" />
       <updated>1766387862944</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add Java Servlet">
+      <option name="closed" value="true" />
+      <created>1768024854991</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1768024854991</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fix backend integration between pages">
+      <option name="closed" value="true" />
+      <created>1768058796631</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1768058796631</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add docker file">
+      <option name="closed" value="true" />
+      <created>1768059327718</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1768059327718</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add docker file">
+      <option name="closed" value="true" />
+      <created>1768059854467</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768059854467</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Add docker file">
+      <option name="closed" value="true" />
+      <created>1768060203600</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1768060203600</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Change airil name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change airil name" />
+    <MESSAGE value="change directory of games.json DATA" />
+    <MESSAGE value="add Java Servlet" />
+    <MESSAGE value="Fix backend integration between pages" />
+    <MESSAGE value="Add docker file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add docker file" />
   </component>
 </project>

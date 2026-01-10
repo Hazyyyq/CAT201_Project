@@ -4,12 +4,21 @@ import styles from '../style/FrontPage.module.css';
 import Footer from "../components/Footer.jsx";
 
 function FrontPage() {
+    const [user, setUser] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
 
     // --- 1. ADD CART COUNT STATE ---
     const [cartCount, setCartCount] = useState(0);
 
     const location = useLocation();
+
+    useEffect(() => {
+        // Read user from local storage
+        const storedUser = localStorage.getItem('currentUser');
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
 
     // --- 2. LOAD CART COUNT ON MOUNT ---
     useEffect(() => {
@@ -84,8 +93,29 @@ function FrontPage() {
                 </Link>
 
                 <div className="nav-button">
-                    <Link to ="/admin" className="nav-pill-btn">Admin Panel</Link>
-                    <Link to="/login" className="nav-pill-btn">Login</Link>
+
+                    {/* SHOW ADMIN BUTTON ONLY IF USER IS ADMIN */}
+                    {user && user.role === 'admin' && (
+                        <Link to="/admin" className="nav-pill-btn">
+                            Admin Panel
+                        </Link>
+                    )}
+
+                    {/* SHOW LOGOUT IF LOGGED IN, ELSE SHOW LOGIN */}
+                    {user ? (
+                        <button
+                            className="nav-pill-btn"
+                            onClick={() => {
+                                localStorage.removeItem('currentUser');
+                                window.location.reload(); // Refresh to update UI
+                            }}
+                        >
+                            Logout
+                        </button>
+                    ) : (
+                        <Link to="/login" className="nav-pill-btn">Login</Link>
+                    )}
+
                 </div>
             </div>
 

@@ -21,11 +21,18 @@ const GamesPage = () => {
 
         // Fetch JSON (Reverted to your original fetch code)
         // Note: Ensure games.json is accessible at this URL from the browser
-        fetch('../Data/games.json')
-            .then(response => response.json())
+        fetch('http://localhost:8080/api/products?category=Games')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(games => {
-                setAllGames(games);
-                setLoading(false);
+                const availableGames = games.filter(game => game.stock > 0);
+
+                setAllGames(availableGames);
+                setLoading(false)
             })
             .catch(err => {
                 console.error("Error loading games:", err);
@@ -45,17 +52,25 @@ const GamesPage = () => {
         setCartCount(cart.length);
     };
 
-    const addToCartDirect = (name, price, imgUrl) => {
+    const addToCartDirect = (id, name, price, imgUrl, availableStock) => {
+        const cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
+
+        // Check how many of this specific ID are already in the cart
+        const currentInCart = cart.filter(item => item.id === id).length;
+
+        if (currentInCart >= availableStock) {
+            alert("Sorry, you cannot add more. We only have " + availableStock + " in stock.");
+            return;
+        }
+
         const newItem = {
-            id: Date.now(),
+            cartItemId: Date.now(),
+            id: id,
             name: name,
             price: price,
-            img: imgUrl,
-            details: "Standard Edition",
-            color: "N/A",
-            size: "Standard"
+            img: imgUrl
         };
-        let cart = JSON.parse(localStorage.getItem('kakiCart')) || [];
+
         cart.push(newItem);
         localStorage.setItem('kakiCart', JSON.stringify(cart));
         updateCartCount();
@@ -112,7 +127,7 @@ const GamesPage = () => {
                     </div>
                     <button
                         className={styles['btn-hero']}
-                        onClick={() => addToCartDirect('Elden Ring: Shadow of the Erdtree', 143.65, 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070')}
+                        onClick={() => addToCartDirect(8,'Elden Ring: Shadow of the Erdtree', 143.65, 'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070')}
                     >
                         Add to Cart
                     </button>
@@ -141,6 +156,7 @@ const GamesPage = () => {
                                     </div>
                                     <div className={styles['card-info']}>
                                         <h3 className={styles['game-title']}>{game.name}</h3>
+                                        <p className={styles['game-desc']}>{game.desc}</p>
                                         <div className={styles['price-row']}>
                                             {game.oldPrice && (
                                                 <span className={styles['price-old']}>RM {game.oldPrice.toFixed(2)}</span>
@@ -149,7 +165,7 @@ const GamesPage = () => {
                                         </div>
                                         <button
                                             className={styles['btn-add']}
-                                            onClick={() => addToCartDirect(game.name, game.price, game.image)}
+                                            onClick={() => addToCartDirect(game.id, game.name, game.price, game.image, game.stock)}
                                         >
                                             Add to Cart
                                         </button>

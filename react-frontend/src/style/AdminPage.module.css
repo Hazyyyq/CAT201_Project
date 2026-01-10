@@ -25,8 +25,14 @@
     padding-bottom: 20px;
 }
 
-.header-text h1 { font-size: 32px; margin-bottom: 5px; }
-.header-text p { color: #86868b; }
+.header-text h1 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.header-text p {
+    color: #86868b;
+}
 
 .btn-add {
     background-color: #0071e3;
@@ -39,10 +45,17 @@
     font-weight: 600;
     transition: 0.3s;
 }
-.btn-add:hover { background-color: #0077ed; }
+
+.btn-add:hover {
+    background-color: #0077ed;
+}
 
 /* Filter Tabs */
-.filter-tabs { margin-bottom: 25px; display: flex; gap: 10px; }
+.filter-tabs {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 10px;
+}
 
 .tab {
     background: transparent;
@@ -53,6 +66,7 @@
     cursor: pointer;
     transition: 0.3s;
 }
+
 .tab:hover, .tab.active {
     background: #f5f5f7;
     color: #000;
@@ -76,7 +90,10 @@
     flex-direction: column;
 }
 
-.product-card:hover { transform: translateY(-5px); border-color: #555; }
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: #555;
+}
 
 .card-img {
     width: 100%;
@@ -85,18 +102,33 @@
     background: #fff;
 }
 
-.card-body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
-
-.card-tag {
-    font-size: 11px; text-transform: uppercase;
-    color: #86868b; display: block; margin-bottom: 5px;
+.card-body {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.card-title { font-size: 18px; font-weight: 600; margin-bottom: 5px; color: #fff; }
+.card-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #86868b;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff;
+}
 
 .card-desc {
-    font-size: 13px; color: #a1a1a6;
-    margin-bottom: 15px; flex-grow: 1;
+    font-size: 13px;
+    color: #a1a1a6;
+    margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .stock-info {
@@ -108,9 +140,16 @@
     border-top: 1px solid #333;
     padding-top: 10px;
 }
-.stock-info span { color: #2997ff; font-weight: 700; }
 
-.card-actions { display: flex; gap: 10px; }
+.stock-info span {
+    color: #2997ff;
+    font-weight: 700;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
 
 .btn-edit, .btn-delete {
     flex: 1;
@@ -122,20 +161,34 @@
     font-weight: 600;
 }
 
-.btn-edit { background: rgba(0, 113, 227, 0.15); color: #2997ff; }
-.btn-edit:hover { background: rgba(0, 113, 227, 0.3); }
+.btn-edit {
+    background: rgba(0, 113, 227, 0.15);
+    color: #2997ff;
+}
 
-.btn-delete { background: rgba(255, 59, 48, 0.15); color: #ff3b30; }
-.btn-delete:hover { background: rgba(255, 59, 48, 0.3); }
+.btn-edit:hover {
+    background: rgba(0, 113, 227, 0.3);
+}
+
+.btn-delete {
+    background: rgba(255, 59, 48, 0.15);
+    color: #ff3b30;
+}
+
+.btn-delete:hover {
+    background: rgba(255, 59, 48, 0.3);
+}
 
 /* Modal */
 .modal {
     display: none;
     position: fixed;
     z-index: 2000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
@@ -145,18 +198,49 @@
     background: #1d1d1f;
     padding: 30px;
     border-radius: 20px;
-    width: 90%; max-width: 500px;
+    width: 90%;
+    max-width: 500px;
     border: 1px solid #424245;
+
+    max-height: 90vh; /* Limits height to 90% of screen */
+    overflow-y: auto; /* Adds scrollbar if content is too long */
+    position: relative;
 }
 
-.modal-header { display: flex; justify-content: space-between; margin-bottom: 20px; }
-.close-btn { font-size: 24px; cursor: pointer; color: #86868b; }
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
 
-.form-group { margin-bottom: 15px; }
-.form-row { display: flex; gap: 15px; }
-.form-row .form-group { flex: 1; }
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: #86868b;
+}
 
-label { display: block; font-size: 12px; color: #86868b; margin-bottom: 5px; }
+.form-group {
+    flex: 1; /* Makes sure both columns are equal width */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    color: #86868b;
+    margin-bottom: 5px;
+}
 
 input[type="text"], input[type="number"], select, textarea {
     width: 100%;
@@ -168,12 +252,35 @@ input[type="text"], input[type="number"], select, textarea {
     font-size: 14px;
     outline: none;
 }
-input:focus, textarea:focus { border-color: #0071e3; }
 
-.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+input:focus, textarea:focus {
+    border-color: #0071e3;
+}
 
-.btn-save { background: #0071e3; color: white; border: none; padding: 10px 20px; border-radius: 15px; cursor: pointer; }
-.btn-cancel { background: transparent; color: #86868b; border: 1px solid #424245; padding: 10px 20px; border-radius: 15px; cursor: pointer; }
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-save {
+    background: #0071e3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: transparent;
+    color: #86868b;
+    border: 1px solid #424245;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+}
 
 /* Utils */
 .text-danger {
@@ -221,4 +328,62 @@ input[type="file"] {
     font-size: 12px;
     color: #86868b;
     font-style: italic;
+}
+
+/* Wrapper to allow absolute positioning of the badge */
+.card-image-wrapper {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+/* Badge styled exactly like the GamePage discount badge */
+.card-tag-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4747; /* Red for discounts */
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 5;
+    text-transform: uppercase;
+}
+
+/* Logic for "NEW" or "HOT" badges (Blue instead of Red) */
+.card-tag-badge-blue {
+        background: #0071e3 !important;
+        box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3) !important;
+}
+
+/* Price Row Styling to match GamePage */
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-old {
+    color: #666;
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+.price-new {
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* Image Preview in Modal */
+.img-preview {
+    display: block;
+    max-width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #424245;
 }

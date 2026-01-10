@@ -138,7 +138,9 @@ nav {
     text-decoration: none;
     color: inherit;
     transition: transform 0.2s, box-shadow 0.2s;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     position: relative;
 }
 
@@ -185,6 +187,9 @@ nav {
 
 .card-info {
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .game-title {
@@ -196,11 +201,27 @@ nav {
     text-overflow: ellipsis;
 }
 
+.game-desc {
+    font-size: 0.85rem;
+    color: #a1a1a6;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    flex-grow: 1;           /* ✅ CRITICAL: This fills the empty space */
+
+    /* Optional: limit text to 2 lines to keep cards somewhat similar */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
 /* Price Styling */
 .price-row {
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-top: auto;
+    padding-top: 15px;
     margin-bottom: 10px;
 }
 
@@ -226,6 +247,7 @@ nav {
     cursor: pointer;
     font-weight: 600;
     transition: 0.2s;
+    margin-top: auto;
 }
 
 .game-card:hover .btn-add {

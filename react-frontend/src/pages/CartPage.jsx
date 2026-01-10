@@ -40,8 +40,33 @@ const CartPage = () => {
         setTotalPrice(0);
     };
 
-    const handleCheckout = () => {
-        alert("Initializing Payment Protocol...");
+    const handleCheckout = async () => {
+        if (cartItems.length === 0) {
+            alert("INVENTORY ALREADY EMPTY");
+            return;
+        }
+
+        try {
+            // 1. Send the cart data to your Java CheckoutServlet
+            const response = await fetch('http://localhost:8080/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ items: cartItems })
+            });
+
+            if (response.ok) {
+                // 2. Only if the server confirms success, show alert and clear the cart
+                alert("PAYMENT VERIFIED: SYSTEM STOCK UPDATED");
+
+                // This function already clears localStorage and resets the state
+                clearCart();
+            } else {
+                alert("TRANSACTION ERROR: SERVER REJECTED REQUEST");
+            }
+        } catch (error) {
+            console.error("Checkout Error:", error);
+            alert("CRITICAL ERROR: CONNECTION TO BACKEND LOST");
+        }
     };
 
     return (
@@ -146,7 +171,7 @@ const CartPage = () => {
                         </div>
 
                         <div className={styles['action-buttons']}>
-                            <button className={styles['checkout-btn']} onClick={handleCheckout}>
+                            <button className={styles['checkout-btn']} onClick={handleCheckout} >
                                 PROCEED TO CHECKOUT <i className="fa fa-chevron-right"></i>
                             </button>
                             <button className={styles['clear-btn']} onClick={clearCart}>

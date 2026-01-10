@@ -85,6 +85,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+.productBadge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff4747; /* Red for discounts */
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    z-index: 5;
+    box-shadow: 0 4px 15px rgba(255, 71, 71, 0.3);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Blue badge for status like "NEW" or "HOT" */
+.statusBadge {
+    background: #0071e3 !important;
+    box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3) !important;
 }
 
 .img {
@@ -153,6 +174,19 @@
     font-weight: 500;
     color: #fff;
     margin-bottom: 20px;
+}
+
+.oldPriceText {
+    color: #888;
+    text-decoration: line-through;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.currentPrice {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
 }
 
 /* TECH SPECS GRID */
