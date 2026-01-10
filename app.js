@@ -51,7 +51,7 @@ http.createServer(function (request, response) {
         serveFile(response, imgPath, contentType);
     }
 
-    // 6. HANDLE VIDEO
+    // 6. HANDLE VIDEOz
     else if (cleanUrl.endsWith(".mp4")) {
         const vidPath = path.join(__dirname, 'public/vid', fileName);
         serveFile(response, vidPath, 'video/mp4');

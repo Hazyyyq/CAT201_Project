@@ -6,26 +6,40 @@ import Footer from "../components/Footer.jsx";
 function FrontPage() {
     const [user, setUser] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
-
-    // --- 1. ADD CART COUNT STATE ---
     const [cartCount, setCartCount] = useState(0);
+
+    // --- NEW: STATE FOR DYNAMIC PRODUCTS ---
+    const [newArrivals, setNewArrivals] = useState([]);
 
     const location = useLocation();
 
     useEffect(() => {
-        // Read user from local storage
         const storedUser = localStorage.getItem('currentUser');
         if (storedUser) {
             setUser(JSON.parse(storedUser));
         }
     }, []);
 
-    // --- 2. LOAD CART COUNT ON MOUNT ---
     useEffect(() => {
-        // Read the cart from local storage
         const storedCart = JSON.parse(localStorage.getItem('kakiCart')) || [];
-        // Update the badge number
         setCartCount(storedCart.length);
+    }, []);
+
+    // --- NEW: FETCH PRODUCTS FROM DATABASE ---
+    useEffect(() => {
+        fetch('http://localhost:8080/api/products')
+            .then(res => res.json())
+            .then(data => {
+                // 1. Filter out Games (they have their own section)
+                // 2. Reverse to get the newest items first
+                // 3. Take the top 3 items
+                const latest = data
+                    .filter(p => p.category !== 'Games')
+                    .reverse()
+                    .slice(0, 3);
+                setNewArrivals(latest);
+            })
+            .catch(err => console.error("Error loading new arrivals:", err));
     }, []);
 
     // Scroll Reveal Logic
@@ -37,22 +51,30 @@ function FrontPage() {
 
         const reveal = () => {
             let reveals = document.getElementsByClassName(styles['info-card']);
-            for (let i = 0; i < reveals.length; i++) {
-                let windowheight = window.innerHeight;
-                let revealtop = reveals[i].getBoundingClientRect().top;
-                let revealpoint = 150;
+            // Also reveal our new dynamic cards
+            let dynamicCards = document.getElementsByClassName('dynamic-reveal');
 
-                if (revealtop < windowheight - revealpoint) {
-                    reveals[i].classList.add(styles.active);
+            const checkReveal = (elements) => {
+                for (let i = 0; i < elements.length; i++) {
+                    let windowheight = window.innerHeight;
+                    let revealtop = elements[i].getBoundingClientRect().top;
+                    let revealpoint = 150;
+
+                    if (revealtop < windowheight - revealpoint) {
+                        elements[i].classList.add(styles.active);
+                    }
                 }
-            }
+            };
+
+            checkReveal(reveals);
+            checkReveal(dynamicCards);
         };
 
         window.addEventListener('scroll', reveal);
         reveal();
 
         return () => window.removeEventListener('scroll', reveal);
-    }, [location]);
+    }, [location, newArrivals]); // Added newArrivals dependency so scroll logic updates when data loads
 
     const scrollToSection = (e, id) => {
         e.preventDefault();
@@ -79,13 +101,11 @@ function FrontPage() {
             </div>
 
             <div className="nav-actions">
-                {/* --- 3. UPDATED CART ICON LOGIC --- */}
-                {/* Note: Changed to standard string class "cart-icon-container" to match your global CSS file */}
                 <Link to="/cart" className="cart-icon-container">
                     <span
                         id="cart-badge"
                         className="fa-stack fa-lg has-badge"
-                        data-count={cartCount} // This injects the number into the CSS
+                        data-count={cartCount}
                     >
                       <i className="fa fa-circle fa-stack-2x"></i>
                       <i className="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
@@ -93,21 +113,17 @@ function FrontPage() {
                 </Link>
 
                 <div className="nav-button">
-
-                    {/* SHOW ADMIN BUTTON ONLY IF USER IS ADMIN */}
                     {user && user.role === 'admin' && (
                         <Link to="/admin" className="nav-pill-btn">
                             Admin Panel
                         </Link>
                     )}
-
-                    {/* SHOW LOGOUT IF LOGGED IN, ELSE SHOW LOGIN */}
                     {user ? (
                         <button
                             className="nav-pill-btn"
                             onClick={() => {
                                 localStorage.removeItem('currentUser');
-                                window.location.reload(); // Refresh to update UI
+                                window.location.reload();
                             }}
                         >
                             Logout
@@ -115,7 +131,6 @@ function FrontPage() {
                     ) : (
                         <Link to="/login" className="nav-pill-btn">Login</Link>
                     )}
-
                 </div>
             </div>
 
@@ -132,6 +147,7 @@ function FrontPage() {
             <Link to="/#about" onClick={(e) => scrollToSection(e, 'about')}>About Us</Link>
         </div>
 
+        {/* --- STATIC HERO SECTIONS --- */}
         <section id="home" className={`${styles['hero-section']} ${styles['dark-theme']} ${styles['short-hero']}`}>
             <img
                 src="https://i.pinimg.com/originals/cd/f4/95/cdf4951a69fe542e2b7d6a07aa234a1b.gif"
@@ -206,6 +222,94 @@ function FrontPage() {
             </div>
         </section>
 
+        {/* --- NEW DYNAMIC "FRESH DROPS" SECTION --- */}
+        {/* Only renders if there are actually new products added */}
+        {newArrivals.length > 0 && (
+            <section
+                className={`${styles['hero-section']} ${styles['dark-theme']}`}
+                style={{
+                    flexDirection: 'column',
+                    padding: '80px 20px',
+                    minHeight: 'auto', // Allow it to fit content
+                    background: 'radial-gradient(circle, #1a1a1a 0%, #000000 100%)' // Subtle dark bg
+                }}
+            >
+                {/* Section Title */}
+                <div style={{
+                    zIndex: 10,
+                    marginBottom: '40px',
+                    textAlign: 'center',
+                    borderBottom: '2px solid #66fcf1',
+                    paddingBottom: '10px'
+                }}>
+                    <h2 style={{
+                        color: '#fff',
+                        fontSize: '2.5rem',
+                        fontFamily: 'DotGothic16, sans-serif',
+                        margin: 0,
+                        textTransform: 'uppercase'
+                    }}>
+                        Fresh <span style={{ color: '#66fcf1', textShadow: '0 0 10px rgba(102, 252, 241, 0.5)' }}>Drops</span>
+                    </h2>
+                </div>
+
+                {/* Cards Grid */}
+                <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '30px',
+                    justifyContent: 'center',
+                    zIndex: 10,
+                    width: '100%',
+                    maxWidth: '1200px'
+                }}>
+                    {newArrivals.map((product) => (
+                        <div
+                            key={product.id}
+                            className={`${styles['info-card']} dynamic-reveal`} // Uses your existing card style + reveal animation
+                            style={{
+                                flex: '1 1 300px', // Responsive width
+                                maxWidth: '350px',
+                                padding: '30px',
+                                minHeight: '400px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between',
+                                background: 'rgba(20, 20, 20, 0.8)' // Slightly darker for contrast
+                            }}
+                        >
+                            <div>
+                                <span className={styles['card-label']} style={{color:'#66fcf1'}}>NEW ARRIVAL</span>
+                                <h3 className={styles['card-title']} style={{fontSize: '1.8rem', marginBottom:'10px'}}>{product.name}</h3>
+                                <div style={{width: '100%', height: '180px', overflow:'hidden', borderRadius:'10px', marginBottom:'20px'}}>
+                                    <img
+                                        src={product.image || 'https://via.placeholder.com/300'}
+                                        alt={product.name}
+                                        style={{width: '100%', height: '100%', objectFit: 'cover'}}
+                                    />
+                                </div>
+                                <p style={{color: '#ccc', fontSize: '0.9rem', marginBottom: '20px'}}>
+                                    {product.desc ? product.desc.substring(0, 60) + '...' : 'Latest tech gear from Kaki Gamerz.'}
+                                </p>
+                            </div>
+
+                            <div style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
+                                <span style={{color: '#fff', fontSize: '1.2rem', fontWeight:'bold'}}>RM {product.price}</span>
+                                <Link
+                                    to={`/products?type=${product.category ? product.category.toLowerCase() : 'phone'}`}
+                                    className={styles['btn-shop']}
+                                    style={{padding: '10px 20px', fontSize:'0.9rem'}}
+                                >
+                                    View
+                                </Link>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+        )}
+
+        {/* --- GAMES SECTION (Existing) --- */}
         <section id="games" className={`${styles['hero-section']} ${styles['dark-theme']}`}>
             <img
                 src="https://i.pinimg.com/originals/f0/06/1d/f0061dcf4eb30dded5caeb4bb1730363.gif"
