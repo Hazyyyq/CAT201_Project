@@ -10,7 +10,7 @@ import ProductPage from './pages/ProductPage';
 import GamePage from './pages/GamePage';
 import CartPage from './pages/CartPage';
 import AdminPage from './pages/AdminPage';
-
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
 
 function App() {
     return (
@@ -26,6 +26,8 @@ function App() {
                 <Route path="/login" element = {<LoginPage/>}/>
 
                 <Route path="/signup" element = {<SignUpPage/>}/>
+
+                <Route path="/forgot-password" element={<ForgotPasswordPage/>}/>
 
                 <Route path="/admin" element = {<AdminPage/>}/>
 
