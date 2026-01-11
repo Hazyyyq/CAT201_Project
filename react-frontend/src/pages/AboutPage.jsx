@@ -7,7 +7,7 @@ function AboutPage() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        // WRAP EVERYTHING IN THE NEW PAGE WRAPPER TO GET FULL BACKGROUND
+    
         <div className={styles.pageWrapper}>
 
             <nav className="nav">
@@ -28,7 +28,7 @@ function AboutPage() {
                 <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
             </div>
 
-            {/* MAIN CONTENT STAYS CENTERED */}
+            {}
             <main className={styles.container}>
                 <div className={styles['brand-header']}>
                     <h1 className={styles['big-brand-title']}>
@@ -49,10 +49,10 @@ function AboutPage() {
                     </p>
                 </div>
 
-                {/* --- TEAM GRID --- */}
+                {}
                 <div className={styles['All-Grid']}>
 
-                    {/* PROFILE 1 */}
+                    {}
                     <article className={styles.managerProfile}>
                         <img src="/img/Airil.jpeg" alt="Airil Aiman bin Azman"/>
                         <div className={styles.info}>
@@ -70,7 +70,7 @@ function AboutPage() {
                         </ul>
                     </article>
 
-                    {/* PROFILE 2 */}
+                    {}
                     <article className={styles.managerProfile}>
                         <img src="/img/Aiman.jpeg" alt="Mohammad Aiman Akmal bin Azlan"/>
                         <div className={styles.info}>
@@ -88,7 +88,7 @@ function AboutPage() {
                         </ul>
                     </article>
 
-                    {/* PROFILE 3 */}
+                    {}
                     <article className={styles.managerProfile}>
                         <img src="/img/Johan.png" alt="Muhammad Johan bin Talib"/>
                         <div className={styles.info}>
@@ -106,7 +106,7 @@ function AboutPage() {
                         </ul>
                     </article>
 
-                    {/* PROFILE 4 */}
+                    {}
                     <article className={styles.managerProfile}>
                         <img src="/img/Haziq.png" alt="Muhammad Haziq Irsyad bin Mohd Rafeein"/>
                         <div className={styles.info}>
@@ -128,7 +128,7 @@ function AboutPage() {
 
                 <hr className={styles.separator}/>
 
-                {/* --- MISSION --- */}
+                {}
                 <section className={styles['video-section']}>
                     <video autoPlay muted loop playsInline className={styles['back-video']}>
                         <source src="/vid/GravitiGamerz.mp4" type="video/mp4"/>
@@ -142,7 +142,7 @@ function AboutPage() {
 
                 <hr className={styles.separator}/>
 
-                {/* --- VISION --- */}
+                {}
                 <section className={styles['video-section']}>
                     <video autoPlay muted loop playsInline className={styles['back-video']}>
                         <source src="/vid/GravitiGamerz_2.mp4" type="video/mp4"/>
