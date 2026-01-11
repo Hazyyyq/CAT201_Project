@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Inter:wght@400;500;700&display=swap');
 
-/* --- 1. LAYOUT & BACKGROUND --- */
+
 .pageWrapper {
     min-height: 100vh;
     position: relative;
@@ -9,8 +9,8 @@
     overflow-x: hidden;
     color: #fff;
 
-    /* UPDATED: Lighter "Studio Grey" Background */
-    /* Center is Charcoal (#333), edges are deeply dark grey (#0a0a0a) - No more pitch black */
+    
+   
     background: radial-gradient(circle at center, #333333 0%, #0a0a0a 100%);
 }
 
@@ -20,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* Dots are white but very subtle */
+    
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
     background-size: 40px 40px;
     z-index: 0;
@@ -28,20 +28,20 @@
     opacity: 0.5;
 }
 
-/* FILM GRAIN TEXTURE (Kept for premium feel) */
+
 .noiseOverlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.04; /* Slightly reduced for lighter bg */
+    opacity: 0.04; 
     pointer-events: none;
     z-index: 2;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
 }
 
-/* INTERACTIVE SPOTLIGHT (Mouse Follow) */
+
 .interactiveSpotlight {
     position: fixed;
     top: 0;
@@ -50,7 +50,7 @@
     height: 100%;
     z-index: 1;
     pointer-events: none;
-    /* Softer, larger glow to match lighter background */
+   
     background: radial-gradient(
             800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
             rgba(255, 255, 255, 0.06),
@@ -58,7 +58,7 @@
     );
 }
 
-/* --- 2. MAIN CONTAINER --- */
+
 .container {
     position: relative;
     z-index: 10;
@@ -70,16 +70,15 @@
     gap: 60px;
     align-items: center;
 
-    /* Slightly lighter glass to match the new background */
+  
     background: rgba(30, 30, 30, 0.6);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 30px;
 
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); /* Softer shadow */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4); 
 }
 
-/* --- 3. IMAGE SECTION --- */
 .imageSection {
     flex: 1;
     display: flex;
@@ -91,7 +90,7 @@
     position: absolute;
     top: 20px;
     right: 20px;
-    background: #ff4747; /* Red for discounts */
+    background: #ff4747; 
     color: white;
     padding: 6px 12px;
     border-radius: 8px;
@@ -102,7 +101,7 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* Blue badge for status like "NEW" or "HOT" */
+
 .statusBadge {
     background: #0071e3 !important;
     box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3) !important;
@@ -112,7 +111,7 @@
     width: 100%;
     max-width: 400px;
     border-radius: 20px;
-    /* Soft shadow to lift image off lighter background */
+    
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     animation: float 6s ease-in-out infinite;
 }
@@ -123,7 +122,7 @@
     100% { transform: translateY(0px); }
 }
 
-/* --- 4. DETAILS SECTION --- */
+
 .detailsSection {
     flex: 1;
     display: flex;
@@ -151,7 +150,7 @@
 .brandTag {
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
-    color: #bbb; /* Lighter grey for better contrast */
+    color: #bbb; 
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -189,7 +188,7 @@
     color: #fff;
 }
 
-/* TECH SPECS GRID */
+
 .specGrid {
     display: flex;
     gap: 20px;
@@ -200,7 +199,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.08); /* Lighter bg */
+    background: rgba(255, 255, 255, 0.08); 
     padding: 8px 12px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -215,7 +214,7 @@
 
 .productDesc {
     font-family: 'Inter', sans-serif;
-    color: #ccc; /* Lighter text */
+    color: #ccc; 
     line-height: 1.6;
     font-size: 1rem;
     margin-bottom: 30px;
@@ -227,7 +226,7 @@
     margin-bottom: 30px;
 }
 
-/* --- 5. VISUAL UI --- */
+
 .formGroup {
     margin-bottom: 25px;
 }
@@ -250,7 +249,7 @@
     text-transform: none;
 }
 
-/* Color Swatches */
+
 .colorGrid {
     display: flex;
     gap: 15px;
@@ -276,7 +275,7 @@
     box-shadow: 0 0 0 3px rgba(255,255,255,0.1), 0 0 0 5px #fff;
 }
 
-/* Storage Pills */
+
 .storageGrid {
     display: flex;
     gap: 10px;
@@ -285,7 +284,7 @@
 .storageOption {
     flex: 1;
     padding: 12px;
-    background: rgba(255, 255, 255, 0.08); /* Lighter pill bg */
+    background: rgba(255, 255, 255, 0.08); 
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: #ccc;
     font-family: 'Inter', sans-serif;
@@ -308,7 +307,7 @@
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* --- 6. BUTTON --- */
+
 .addBtn {
     position: relative;
     overflow: hidden;
@@ -354,7 +353,7 @@
     transition: 0.7s ease-in-out;
 }
 
-/* --- MOBILE RESPONSIVE --- */
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
