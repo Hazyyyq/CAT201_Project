@@ -6,7 +6,7 @@ import { API_BASE_URL } from '../config';
 const CartPage = () => {
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
-    const [cartCount, setCartCount] = useState(0); // Added for Nav Badge
+    const [cartCount, setCartCount] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const CartPage = () => {
     const loadCart = () => {
         const storedCart = JSON.parse(localStorage.getItem('kakiCart')) || [];
         setCartItems(storedCart);
-        setCartCount(storedCart.length); // Update Badge
+        setCartCount(storedCart.length); 
         calculateTotal(storedCart);
     };
 
@@ -29,7 +29,7 @@ const CartPage = () => {
         const updatedCart = [...cartItems];
         updatedCart.splice(index, 1);
         setCartItems(updatedCart);
-        setCartCount(updatedCart.length); // Update Badge
+        setCartCount(updatedCart.length); 
         calculateTotal(updatedCart);
         localStorage.setItem('kakiCart', JSON.stringify(updatedCart));
     };
@@ -37,7 +37,7 @@ const CartPage = () => {
     const clearCart = () => {
         localStorage.removeItem('kakiCart');
         setCartItems([]);
-        setCartCount(0); // Update Badge
+        setCartCount(0); 
         setTotalPrice(0);
     };
 
@@ -48,7 +48,7 @@ const CartPage = () => {
         }
 
         try {
-            // 1. Send the cart data to your Java CheckoutServlet
+          
             const response = await fetch(`${API_BASE_URL}/api/checkout`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -56,10 +56,10 @@ const CartPage = () => {
             });
 
             if (response.ok) {
-                // 2. Only if the server confirms success, show alert and clear the cart
+                
                 alert("PAYMENT VERIFIED: SYSTEM STOCK UPDATED");
 
-                // This function already clears localStorage and resets the state
+                
                 clearCart();
             } else {
                 alert("TRANSACTION ERROR: SERVER REJECTED REQUEST");
