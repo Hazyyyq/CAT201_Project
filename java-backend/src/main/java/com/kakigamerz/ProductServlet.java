@@ -16,31 +16,26 @@ import java.util.stream.Collectors;
 
 public class ProductServlet extends HttpServlet {
 
-    // Make sure this points to your actual JSON file location
     private final File jsonFile = new File("src/Data/products.json");
     private final Gson gson = new Gson();
 
-    // --- 1. GET: Read all products (Loads the grid) ---
+    // --- 1. GET: Read all products ---
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
 
-        // 1. Read all products from the JSON file
         List<Product> allProducts = readProducts();
-
-        // 2. Get the "category" parameter from the URL (e.g., /api/products?category=Games)
         String categoryFilter = req.getParameter("category");
 
         if (categoryFilter != null && !categoryFilter.isEmpty()) {
-            // 3. Filter the list to only include matching categories (case-insensitive)
             List<Product> filteredProducts = allProducts.stream()
-                    .filter(p -> p.category != null && p.category.equalsIgnoreCase(categoryFilter))
+                    // OOP FIX: Use .getCategory() instead of .category
+                    .filter(p -> p.getCategory() != null && p.getCategory().equalsIgnoreCase(categoryFilter))
                     .collect(Collectors.toList());
 
             resp.getWriter().write(gson.toJson(filteredProducts));
         } else {
-            // 4. If no category provided, return everything
             resp.getWriter().write(gson.toJson(allProducts));
         }
     }
@@ -51,16 +46,16 @@ public class ProductServlet extends HttpServlet {
         Product newProduct = gson.fromJson(req.getReader(), Product.class);
         List<Product> products = readProducts();
 
-        // Generate a simple ID based on time
-        if (newProduct.id == 0) {
-            newProduct.id = System.currentTimeMillis();
+        // OOP FIX: Use .getId() and .setId()
+        if (newProduct.getId() == 0) {
+            newProduct.setId(System.currentTimeMillis());
         }
 
         products.add(newProduct);
         saveProducts(products);
 
         resp.setContentType("application/json");
-        resp.getWriter().write("{\"message\": \"Product added successfully\", \"id\": " + newProduct.id + "}");
+        resp.getWriter().write("{\"message\": \"Product added successfully\", \"id\": " + newProduct.getId() + "}");
     }
 
     // --- 3. PUT: Edit an existing product ---
@@ -70,25 +65,23 @@ public class ProductServlet extends HttpServlet {
         List<Product> products = readProducts();
 
         boolean found = false;
-        for (int i = 0; i < products.size(); i++) {
-            Product existing = products.get(i);
+        for (Product existing : products) {
 
-            if (existing.id == updatedData.id) {
-                // --- MERGE LOGIC START ---
-                // Only update the fields the Admin Panel knows about
-                existing.name = updatedData.name;
-                existing.category = updatedData.category;
-                existing.stock = updatedData.stock;
-                existing.price = updatedData.price;
-                existing.oldPrice = updatedData.oldPrice; // Update oldPrice
-                existing.badge = updatedData.badge;       // Update badge
-                existing.desc = updatedData.desc;
-                existing.image = updatedData.image;
+            // OOP FIX: Use getters to compare ID
+            if (existing.getId() == updatedData.getId()) {
 
-                // DO NOT touch 'specs' or 'colors'.
-                // Since 'updatedData' won't have them (null),
-                // keeping 'existing' preserves the original data.
-                // --- MERGE LOGIC END ---
+                // --- MERGE LOGIC (Using Setters) ---
+                existing.setName(updatedData.getName());
+                existing.setCategory(updatedData.getCategory());
+                existing.setStock(updatedData.getStock());
+                existing.setPrice(updatedData.getPrice());
+                existing.setOldPrice(updatedData.getOldPrice());
+                existing.setBadge(updatedData.getBadge());
+                existing.setDesc(updatedData.getDesc());
+                existing.setImage(updatedData.getImage());
+
+                // We deliberately do NOT update specs/colors here to preserve them
+                // unless you want to update them too.
 
                 found = true;
                 break;
@@ -108,7 +101,6 @@ public class ProductServlet extends HttpServlet {
     // --- 4. DELETE: Remove a product ---
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // We expect the ID in the URL, e.g., /api/games?id=123
         String idParam = req.getParameter("id");
         if (idParam == null) {
             resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -118,9 +110,9 @@ public class ProductServlet extends HttpServlet {
         long idToDelete = Long.parseLong(idParam);
         List<Product> products = readProducts();
 
-        // Filter out the product to delete
+        // OOP FIX: Use .getId() in filter
         List<Product> remainingProducts = products.stream()
-                .filter(p -> p.id != idToDelete)
+                .filter(p -> p.getId() != idToDelete)
                 .collect(Collectors.toList());
 
         saveProducts(remainingProducts);
@@ -129,7 +121,7 @@ public class ProductServlet extends HttpServlet {
         resp.getWriter().write("{\"message\": \"Product deleted\"}");
     }
 
-    // --- Helpers to Read/Write JSON File ---
+    // --- Helpers ---
     private List<Product> readProducts() throws IOException {
         if (!jsonFile.exists()) return new ArrayList<>();
         String content = Files.readString(jsonFile.toPath(), StandardCharsets.UTF_8);

@@ -18,15 +18,22 @@ public class ForgotPasswordServlet extends HttpServlet {
 
     private final File jsonFile = new File("src/Data/users.json");
 
+    // OOP FIX: Encapsulate this inner class
     private static class ResetRequest {
-        String email;
-        String newPassword;
+        private String email;
+        private String newPassword;
+
+        // Getters and Setters
+        public String getEmail() { return email; }
+        public void setEmail(String email) { this.email = email; }
+
+        public String getNewPassword() { return newPassword; }
+        public void setNewPassword(String newPassword) { this.newPassword = newPassword; }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        // 1. Setup Gson
         Gson gson = new Gson();
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
@@ -34,7 +41,6 @@ public class ForgotPasswordServlet extends HttpServlet {
         try {
             ResetRequest resetReq = gson.fromJson(req.getReader(), ResetRequest.class);
 
-            // 3. Check if file exists
             if (!jsonFile.exists()) {
                 resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
                 resp.getWriter().write("{\"success\": false, \"message\": \"Database not found.\"}");
@@ -48,8 +54,12 @@ public class ForgotPasswordServlet extends HttpServlet {
 
             boolean userFound = false;
             for (User u : users) {
-                if (u.email.equals(resetReq.email)) {
-                    u.password = resetReq.newPassword;
+                // OOP FIX: Use Getters (.getEmail())
+                if (u.getEmail().equals(resetReq.getEmail())) {
+
+                    // OOP FIX: Use Setters (.setPassword())
+                    u.setPassword(resetReq.getNewPassword());
+
                     userFound = true;
                     break;
                 }
