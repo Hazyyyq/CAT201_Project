@@ -1,6 +1,4 @@
-/* =========================================
-   1. MAIN CONTAINER
-   ========================================= */
+
 .pixel-footer {
     background: #000;
     color: #fff;
@@ -9,29 +7,25 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* =========================================
-   2. CONTENT LAYOUT (The Columns)
-   ========================================= */
+
 .footer-content {
-    display: flex; /* Makes columns sit side-by-side */
-    flex-wrap: wrap; /* Allows wrapping if screen is too small */
+    display: flex; 
+    flex-wrap: wrap; 
     justify-content: space-around;
     text-align: left;
-    gap: 40px; /* Space between columns */
+    gap: 40px; 
 }
 
 .footer-column {
     display: flex;
-    flex-direction: column; /* Stacks title, text, and links vertically */
+    flex-direction: column; 
     gap: 20px;
-    min-width: 200px; /* Prevents columns from getting too thin */
+    min-width: 200px; 
 }
 
-/* =========================================
-   3. TYPOGRAPHY & HEADINGS
-   ========================================= */
+
 .footer-heading {
-    color: #66fcf1; /* Neon Teal */
+    color: #66fcf1; 
     font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -39,15 +33,13 @@
 }
 
 .footer-column p {
-    color: #c5c6c7; /* Light Grey */
+    color: #c5c6c7; 
     line-height: 1.6;
 }
 
-/* =========================================
-   4. LINKS & CONTACT ICONS
-   ========================================= */
+
 .footer-links-list {
-    list-style: none; /* Removes bullet points */
+    list-style: none; 
     padding: 0;
     margin: 0;
     display: flex;
@@ -63,12 +55,12 @@
 
 .footer-links-list a:hover {
     color: #66fcf1;
-    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6); /* Glowing effect */
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.6); 
 }
 
 .contact-info-item {
     display: flex;
-    align-items: center; /* Aligns icon and text horizontally */
+    align-items: center; 
     gap: 15px;
     color: #c5c6c7;
 }
@@ -76,26 +68,22 @@
 .contact-info-item i {
     color: #66fcf1;
     font-size: 1.1rem;
-    width: 20px; /* Fixed width ensures text lines up perfectly */
+    width: 20px; 
     text-align: center;
 }
 
-/* =========================================
-   5. BOTTOM COPYRIGHT BAR
-   ========================================= */
+
 .footer-bottom {
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #222; /* Subtle separation line */
+    border-top: 1px solid #222; 
     font-size: 0.8rem;
     color: #666;
     width: 100%;
 }
 
-/* =========================================
-   6. RESPONSIVE (MOBILE)
-   ========================================= */
+
 @media (max-width: 768px) {
 
     .footer-content {
@@ -104,6 +92,6 @@
     }
 
     .pixel-footer {
-        padding: 60px 30px; /* Reduce padding on small screens */
+        padding: 60px 30px; 
     }
 }
