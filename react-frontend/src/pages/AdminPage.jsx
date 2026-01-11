@@ -5,7 +5,7 @@ import styles from '../style/AdminPage.module.css';
 const AdminPage = () => {
 
     // --- 1. STATE ---
-    const [products, setProducts] = useState([]); // Start empty, fetch later
+    const [products, setProducts] = useState([]);
     const [currentCategory, setCurrentCategory] = useState('all');
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isOpen, setIsOpen] = useState(false); // Sidebar toggle
@@ -26,8 +26,7 @@ const AdminPage = () => {
 
     const fetchProducts = async () => {
         try {
-            // Using 127.0.0.1 to avoid localhost issues
-            const res = await fetch('http://127.0.0.1:8080/api/products');
+            const res = await fetch('http://localhost:8080/api/products');
             const data = await res.json();
             setProducts(data);
         } catch (error) {
@@ -41,10 +40,9 @@ const AdminPage = () => {
     const handleDelete = async (id) => {
         if (window.confirm("Are you sure you want to delete this product?")) {
             try {
-                await fetch(`http://127.0.0.1:8080/api/products?id=${id}`, {
+                await fetch(`http://localhost:8080/api/products?id=${id}`, {
                     method: 'DELETE'
                 });
-                // Refresh list from server immediately
                 fetchProducts();
             } catch (error) {
                 console.error("Delete failed:", error);
@@ -56,9 +54,8 @@ const AdminPage = () => {
         e.preventDefault();
         const finalImage = previewImage !== "" ? previewImage : formData.image;
 
-        // Prepare data object
         const productData = {
-            id: isEditing ? editId : 0, // 0 tells Java to generate a new ID
+            id: isEditing ? editId : 0,
             name: formData.name,
             image: finalImage,
             category: formData.category,
@@ -71,18 +68,14 @@ const AdminPage = () => {
 
         try {
             if (isEditing) {
-                // EDIT Mode (PUT)
-                await fetch('http://127.0.0.1:8080/api/products', {
+                await fetch('http://localhost:8080/api/products', {
                     method: 'PUT', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(productData)
                 });
             } else {
-                // ADD Mode (POST)
-                await fetch('http://127.0.0.1:8080/api/products', {
+                await fetch('http://localhost:8080/api/products', {
                     method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(productData)
                 });
             }
-
-            // Refresh list and close modal
             fetchProducts();
             closeModal();
 
@@ -159,19 +152,48 @@ const AdminPage = () => {
                 KAKI GAMERZ-ADMIN<span className="dot"></span>
             </Link>
 
-            {/* --- ADDED style={{ marginLeft: 'auto' }} TO PUSH LINKS RIGHT --- */}
-            <div className="nav-links desktop-menu" style={{ marginLeft: 'auto', display: 'flex', gap: '30px', paddingRight: '20px' }}>
-                <Link to="/">Store Front</Link>
-                <a href="#" className="active">Inventory</a>
+            {/* DESKTOP: Show Store Front link on the right. Hidden on Mobile. */}
+            <div className="nav-links desktop-menu" style={{ marginLeft: 'auto' }}>
+                <Link to="/" style={{ color: '#fff', fontWeight: 'bold' }}>Store Front</Link>
             </div>
 
-            <div className="nav-actions">
-            </div>
+            {/* REMOVED the "Admin Mode" badge here */}
 
+            {/* MOBILE: Show Sidebar Icon. Hidden on Desktop (via CSS). */}
             <div className="sidebar" onClick={() => setIsOpen(!isOpen)}>
                 <i className={`fa ${isOpen ? "fa-times" : "fa-bars"}`}></i>
             </div>
         </nav>
+
+        {/* --- MOBILE SIDEBAR MENU --- */}
+        <div className={`mobile-nav-overlay ${isOpen ? 'active' : ''}`}>
+            {/* Store Front Link (Mobile Only) */}
+            <Link to="/" onClick={() => setIsOpen(false)} style={{ color: '#fff', fontSize: '1.5rem', fontFamily: 'DotGothic16, sans-serif' }}>
+                Store Front
+            </Link>
+
+            <div style={{ width: '60%', height: '1px', background: 'rgba(255,255,255,0.2)', margin: '10px 0' }}></div>
+
+            <button
+                onClick={() => {
+                    localStorage.removeItem('currentUser');
+                    window.location.href = "/";
+                }}
+                style={{
+                    background: 'transparent',
+                    border: '1px solid #ff4747',
+                    color: '#ff4747',
+                    padding: '10px 40px',
+                    borderRadius: '30px',
+                    fontSize: '1.2rem',
+                    fontFamily: 'DotGothic16, sans-serif',
+                    marginTop: '15px',
+                    cursor: 'pointer'
+                }}
+            >
+                LOGOUT
+            </button>
+        </div>
 
         <div className={styles['admin-container']}>
             <div className={styles['header-section']}>
@@ -199,7 +221,6 @@ const AdminPage = () => {
                     <p style={{gridColumn: '1/-1', textAlign: 'center', color: '#666', padding: '20px'}}>
                         No products found in this category.
                     </p>) : (filteredProducts.map((item) => {
-                    const stockClass = item.stock < 5 ? styles['text-danger'] : '';
                     return (<div className={styles['product-card']} key={item.id}>
                         <div className={styles['card-image-wrapper']}>
                             <img
@@ -207,13 +228,10 @@ const AdminPage = () => {
                                 className={styles['card-img']}
                                 alt={item.name}
                             />
-
-
-                            {/* Logic for dynamic color switching */}
                             {item.badge && (<span
                                 className={`${styles['card-tag-badge']} ${!item.badge.includes('%') ? styles['card-tag-badge-blue'] : ''}`}>
-        {item.badge}
-    </span>)}
+                                {item.badge}
+                            </span>)}
                         </div>
                         <div className={styles['card-body']}>
                             <span className={styles['card-tag']}>{item.category}</span>
@@ -221,7 +239,6 @@ const AdminPage = () => {
                             <p className={styles['card-desc']}>{item.desc}</p>
                             <div className={styles['stock-info']}>
                                 <div className={styles['price-row']}>
-                                    {/* 3. OLD PRICE (STRIKETHROUGH) AND NEW PRICE */}
                                     {item.category === 'Games' && item.oldPrice && (
                                         <span className={styles['price-old']}>
                                             RM{parseFloat(item.oldPrice).toFixed(2)}
@@ -309,16 +326,16 @@ const AdminPage = () => {
                             </select>
 
                             {formData.category === 'Games' && (<div className={styles['form-group']}>
-                                    <label>Old Price (RM)</label>
-                                    <input
-                                        type="number"
-                                        id="pOldPrice"
-                                        value={formData.oldPrice}
-                                        onChange={handleInputChange}
-                                        step="0.01"
-                                        placeholder="e.g. 299.00"
-                                    />
-                                </div>)}
+                                <label>Old Price (RM)</label>
+                                <input
+                                    type="number"
+                                    id="pOldPrice"
+                                    value={formData.oldPrice}
+                                    onChange={handleInputChange}
+                                    step="0.01"
+                                    placeholder="e.g. 299.00"
+                                />
+                            </div>)}
                             <div className={styles['form-group']}>
                                 <label>Badge Text</label>
                                 <input

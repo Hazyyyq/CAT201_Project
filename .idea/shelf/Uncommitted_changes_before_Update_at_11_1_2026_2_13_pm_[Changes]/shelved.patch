@@ -1,0 +1,215 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a0e7f99b-0edd-44c9-9cee-aee7cf954985\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/.gitattributes\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/README.md\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/eslint.config.js\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/index.html\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/package-lock.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/package.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/public/img/Aiman.jpeg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/public/img/Airil.jpeg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/public/img/Haziq.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/public/img/Johan.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/public/img/test.jpeg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/public/vid/GravitiGamerz.mp4\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/public/vid/GravitiGamerz_2.mp4\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/public/vid/intro.mp4\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/App.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/Data/games.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/PinPagePosition.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/assets/react.svg\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/components/Footer.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/main.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/pages/AboutPage.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/pages/AdminPage.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/pages/CartPage.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/pages/FrontPage.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/pages/GamePage.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/pages/LoginPage.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/pages/ProductPage.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/pages/SignUpPage.jsx\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/style/AboutPage.module.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/style/AdminPage.module.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/style/AuthPage.module.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/style/CartPage.module.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/style/Footer.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/style/FrontPage.module.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/style/GamePage.module.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/style/ProductPage.module.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/src/style/index.css\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/react-frontend/vite.config.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/CSS/aboutPage.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/CSS/aboutPage.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/HTML/adminPageDesign.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/HTML/adminPageDesign.html\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/public/HTML/cartPage.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/public/HTML/cartPage.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"JavaScript File\" />\r\n        <option value=\"HTML File\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <favorite-branches>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"REMOTE\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"origin/aiman-part\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </favorite-branches>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;muhdjohan64-ops&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Hazyyyq/CAT201_Project.git&quot;,\r\n    &quot;accountId&quot;: &quot;8792ef71-fde1-4d68-96b8-3ed1c518a223&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"37BqmLalLgg7HppqdSiHNqeaN5n\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"JavaScript Debug.cartPage.html.executor\": \"Run\",\r\n    \"JavaScript Debug.frontPage.html.executor\": \"Run\",\r\n    \"ModuleVcsDetector.initialDetectionPerformed\": \"true\",\r\n    \"Node.js.App.jsx.executor\": \"Run\",\r\n    \"Node.js.app.js.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"dart.analysis.tool.window.visible\": \"false\",\r\n    \"git-widget-placeholder\": \"haziq/fix/node.js-to-react.js\",\r\n    \"junie.onboarding.icon.badge.shown\": \"true\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/haziq/Downloads/ComputerSciences/SEM 3/CAT201/IntelliJ/Assignmen_JoZiq/CAT201_Project/react-frontend/src\",\r\n    \"list.type.of.created.stylesheet\": \"CSS\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"to.speed.mode.migration.done\": \"true\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\haziq\\Downloads\\ComputerSciences\\SEM 3\\CAT201\\IntelliJ\\Assignmen_JoZiq\\CAT201_Project\\react-frontend\\src\" />\r\n      <recent name=\"C:\\Users\\haziq\\Downloads\\ComputerSciences\\SEM 3\\CAT201\\IntelliJ\\Assignmen_JoZiq\\CAT201_Project\\react-frontend\\src\\style\" />\r\n      <recent name=\"C:\\Users\\haziq\\Downloads\\ComputerSciences\\SEM 3\\CAT201\\IntelliJ\\Assignmen_JoZiq\\CAT201_Project\\react-frontend\\src\\pages\" />\r\n      <recent name=\"C:\\Users\\haziq\\Downloads\\ComputerSciences\\SEM 3\\CAT201\\IntelliJ\\Assignmen_JoZiq\\CAT201_Project\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84\" />\r\n        <option value=\"bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a0e7f99b-0edd-44c9-9cee-aee7cf954985\" name=\"Changes\" comment=\"\" />\r\n      <created>1766386971090</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1766386971090</updated>\r\n      <workItem from=\"1766386973156\" duration=\"4000\" />\r\n      <workItem from=\"1766387154067\" duration=\"2091000\" />\r\n      <workItem from=\"1766755575243\" duration=\"7838000\" />\r\n      <workItem from=\"1766985673026\" duration=\"6247000\" />\r\n      <workItem from=\"1767200711572\" duration=\"1588000\" />\r\n      <workItem from=\"1767897320919\" duration=\"271000\" />\r\n      <workItem from=\"1767902620069\" duration=\"888000\" />\r\n      <workItem from=\"1767927761679\" duration=\"16558000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Change airil name\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1766387862944</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1766387862944</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Change airil name\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Change airil name\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 52f03ae48e7ed5a0265aeb034b1bed8c8be4703c)
++++ b/.idea/workspace.xml	(date 1768112007348)
+@@ -4,50 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a0e7f99b-0edd-44c9-9cee-aee7cf954985" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/react-frontend/.gitattributes" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/README.md" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/eslint.config.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/index.html" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/package-lock.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/package.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/Aiman.jpeg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/Airil.jpeg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/Haziq.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/Johan.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/public/img/test.jpeg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/public/vid/GravitiGamerz.mp4" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/public/vid/GravitiGamerz_2.mp4" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/public/vid/intro.mp4" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/App.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/Data/games.json" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/PinPagePosition.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/assets/react.svg" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/components/Footer.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/main.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/AboutPage.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/AdminPage.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/CartPage.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/FrontPage.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/GamePage.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/LoginPage.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/ProductPage.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/pages/SignUpPage.jsx" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/AboutPage.module.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/AdminPage.module.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/AuthPage.module.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/CartPage.module.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/Footer.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/FrontPage.module.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/GamePage.module.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/ProductPage.module.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/src/style/index.css" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/react-frontend/vite.config.js" afterDir="false" />
++    <list default="true" id="a0e7f99b-0edd-44c9-9cee-aee7cf954985" name="Changes" comment="Add docker file">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/CSS/aboutPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/CSS/aboutPage.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/HTML/adminPageDesign.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/HTML/adminPageDesign.html" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/public/HTML/cartPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/HTML/cartPage.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/java-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/pom.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -60,6 +19,9 @@
+         <option value="JavaScript File" />
+         <option value="HTML File" />
+         <option value="CSS File" />
++        <option value="package.json" />
++        <option value="Class" />
++        <option value="Dockerfile" />
+       </list>
+     </option>
+   </component>
+@@ -104,38 +66,60 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "DefaultHtmlFileTemplate": "HTML File",
+-    "JavaScript Debug.cartPage.html.executor": "Run",
+-    "JavaScript Debug.frontPage.html.executor": "Run",
+-    "ModuleVcsDetector.initialDetectionPerformed": "true",
+-    "Node.js.App.jsx.executor": "Run",
+-    "Node.js.app.js.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "dart.analysis.tool.window.visible": "false",
+-    "git-widget-placeholder": "haziq/fix/node.js-to-react.js",
+-    "junie.onboarding.icon.badge.shown": "true",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/Users/haziq/Downloads/ComputerSciences/SEM 3/CAT201/IntelliJ/Assignmen_JoZiq/CAT201_Project/react-frontend/src",
+-    "list.type.of.created.stylesheet": "CSS",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "to.speed.mode.migration.done": "true",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
++    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
++    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
++    &quot;JavaScript Debug.cartPage.html.executor&quot;: &quot;Run&quot;,
++    &quot;JavaScript Debug.frontPage.html.executor&quot;: &quot;Run&quot;,
++    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
++    &quot;Node.js.App.jsx.executor&quot;: &quot;Run&quot;,
++    &quot;Node.js.app.js.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;haziq/backend/adding-java-servlet&quot;,
++    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/haziq/Downloads/ComputerSciences/SEM 3/CAT201/IntelliJ/Assignmen_JoZiq/CAT201_Project/java-backend&quot;,
++    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\java-backend" />
+       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\react-frontend\src" />
+       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\react-frontend\src\style" />
+       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\react-frontend\src\pages" />
+       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project" />
+     </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\java-backend\src\Data" />
++    </key>
++  </component>
++  <component name="RunManager">
++    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
++      <option name="ALTERNATIVE_JRE_PATH" value="19" />
++      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
++      <option name="MAIN_CLASS_NAME" value="com.kakigamerz.Main" />
++      <module name="backend" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/java-backend" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+   </component>
+   <component name="SharedIndexes">
+     <attachedChunks>
+@@ -169,14 +153,53 @@
+       <option name="project" value="LOCAL" />
+       <updated>1766387862944</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="add Java Servlet">
++      <option name="closed" value="true" />
++      <created>1768024854991</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1768024854991</updated>
++    </task>
++    <task id="LOCAL-00003" summary="Fix backend integration between pages">
++      <option name="closed" value="true" />
++      <created>1768058796631</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1768058796631</updated>
++    </task>
++    <task id="LOCAL-00004" summary="Add docker file">
++      <option name="closed" value="true" />
++      <created>1768059327718</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1768059327718</updated>
++    </task>
++    <option name="localTasksCounter" value="5" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Change airil name" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Change airil name" />
++    <MESSAGE value="change directory of games.json DATA" />
++    <MESSAGE value="add Java Servlet" />
++    <MESSAGE value="Fix backend integration between pages" />
++    <MESSAGE value="Add docker file" />
++    <option name="LAST_COMMIT_MESSAGE" value="Add docker file" />
+   </component>
+ </project>
+\ No newline at end of file

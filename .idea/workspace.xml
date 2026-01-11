@@ -4,9 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0e7f99b-0edd-44c9-9cee-aee7cf954985" name="Changes" comment="Add docker file">
+    <list default="true" id="a0e7f99b-0edd-44c9-9cee-aee7cf954985" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/Data/products.json" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/Data/products.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CheckoutServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CheckoutServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CorsFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CorsFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/LoginServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/LoginServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/SignUpServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/SignUpServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/AdminPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/AdminPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +27,6 @@
         <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="package.json" />
-        <option value="Class" />
-        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -68,8 +73,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Unnamed.executor": "Run",
+    "Application.webapp.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "JavaScript Debug.cartPage.html.executor": "Run",
     "JavaScript Debug.frontPage.html.executor": "Run",
@@ -80,39 +84,29 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "haziq/backend/adding-java-servlet",
+    "git-widget-placeholder": "aiman/editadmin/page",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/haziq/Downloads/ComputerSciences/SEM 3/CAT201/IntelliJ/Assignmen_JoZiq/CAT201_Project/java-backend",
+    "last_opened_file_path": "C:/Users/haziq/Downloads/ComputerSciences/SEM 3/CAT201/IntelliJ/Assignmen_JoZiq/CAT201_Project/react-frontend/src",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
     "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2025.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\java-backend" />
       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\react-frontend\src" />
       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\react-frontend\src\style" />
       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\react-frontend\src\pages" />
       <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\haziq\Downloads\ComputerSciences\SEM 3\CAT201\IntelliJ\Assignmen_JoZiq\CAT201_Project\java-backend\src\Data" />
-    </key>
   </component>
   <component name="RunManager">
-    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="19" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <configuration name="webapp" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.kakigamerz.Main" />
       <module name="backend" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/java-backend" />
@@ -153,53 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1766387862944</updated>
     </task>
-    <task id="LOCAL-00002" summary="add Java Servlet">
-      <option name="closed" value="true" />
-      <created>1768024854991</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1768024854991</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Fix backend integration between pages">
-      <option name="closed" value="true" />
-      <created>1768058796631</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1768058796631</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Add docker file">
-      <option name="closed" value="true" />
-      <created>1768059327718</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1768059327718</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Change airil name" />
-    <MESSAGE value="change directory of games.json DATA" />
-    <MESSAGE value="add Java Servlet" />
-    <MESSAGE value="Fix backend integration between pages" />
-    <MESSAGE value="Add docker file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add docker file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change airil name" />
   </component>
 </project>
