@@ -3,8 +3,8 @@ package com.kakigamerz;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
-import org.apache.tomcat.util.descriptor.web.FilterDef; // NEW IMPORT
-import org.apache.tomcat.util.descriptor.web.FilterMap; // NEW IMPORT
+import org.apache.tomcat.util.descriptor.web.FilterDef; 
+import org.apache.tomcat.util.descriptor.web.FilterMap; 
 
 import java.io.File;
 
@@ -17,28 +17,23 @@ public class Main {
         String docBase = new File("src/main/webapp").getAbsolutePath();
         Context ctx = tomcat.addContext("", docBase);
 
-        // ==========================================
-        // 1. SETUP GLOBAL CORS FILTER
-        // ==========================================
+       
 
-        // Define the Filter
+        
         FilterDef corsFilter = new FilterDef();
         corsFilter.setFilterName("CorsFilter");
         corsFilter.setFilterClass(CorsFilter.class.getName());
         ctx.addFilterDef(corsFilter);
 
-        // Map the Filter to "/*" (Meaning: Apply to EVERYTHING)
         FilterMap corsMapping = new FilterMap();
         corsMapping.setFilterName("CorsFilter");
         corsMapping.addURLPattern("/*");
         ctx.addFilterMap(corsMapping);
 
-        // ==========================================
-        // 2. REGISTER SERVLETS
-        // ==========================================
+       
 
-//        Tomcat.addServlet(ctx, "GameServlet", new GameServlet());
-//        ctx.addServletMappingDecoded("/api/games", "GameServlet");
+
+
 
         Tomcat.addServlet(ctx, "ProductServlet", new ProductServlet());
         ctx.addServletMappingDecoded("/api/products", "ProductServlet");
@@ -55,7 +50,7 @@ public class Main {
         Tomcat.addServlet(ctx, "CheckoutServlet", new CheckoutServlet());
         ctx.addServletMappingDecoded("/api/checkout", "CheckoutServlet");
 
-        // Start Server
+       
         tomcat.getConnector();
         tomcat.start();
 
