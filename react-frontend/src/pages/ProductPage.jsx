@@ -7,9 +7,9 @@ const ProductPage = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
 
-    // GET BOTH PARAMETERS
+    
     const idParam = queryParams.get('id');
-    const typeParam = queryParams.get('type') || 'phone'; // Default fallback
+    const typeParam = queryParams.get('type') || 'phone'; 
 
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -20,7 +20,7 @@ const ProductPage = () => {
     const [finalPrice, setFinalPrice] = useState(0);
     const [isOpen, setIsOpen] = useState(false);
 
-    // --- UPDATED FETCH LOGIC ---
+    
     useEffect(() => {
         const fetchData = async () => {
             setLoading(true);
@@ -30,19 +30,19 @@ const ProductPage = () => {
 
                 let foundProduct = null;
 
-                // 1. Try finding by ID first (for Fresh Drops)
+                
                 if (idParam) {
                     foundProduct = data.find(item => item.id.toString() === idParam.toString());
                 }
 
-                // 2. If no ID found, try finding by Category (for Nav Links)
+                
                 if (!foundProduct && typeParam) {
                     foundProduct = data.find(item =>
                         item.category && item.category.toLowerCase() === typeParam.toLowerCase()
                     );
                 }
 
-                // 3. Last Resort: Default to first Phone
+                
                 if (!foundProduct) {
                     foundProduct = data.find(item => item.category === 'Phone');
                 }
@@ -62,9 +62,9 @@ const ProductPage = () => {
             }
         };
         fetchData();
-    }, [idParam, typeParam]); // Run when URL changes
+    }, [idParam, typeParam]); 
 
-    // Mouse Tracking
+    
     useEffect(() => {
         const handleMouseMove = (e) => {
             const x = e.clientX;
@@ -164,7 +164,7 @@ const ProductPage = () => {
                     )}
                     <div className={`${styles.priceTag} ${styles.stagger3}`}>RM {finalPrice}</div>
 
-                    {/* --- SPECS GRID --- */}
+                    
                     <div className={`${styles.specGrid} ${styles.stagger4}`}>
                         {Array.isArray(product.specs) && product.specs.map((spec, index) => (
                             <div key={index} className={styles.specItem}>
@@ -177,7 +177,7 @@ const ProductPage = () => {
                     <p className={`${styles.productDesc} ${styles.stagger5}`}>{product.desc}</p>
                     <div className={`${styles.divider} ${styles.stagger5}`}></div>
 
-                    {/* --- COLOR SWATCHES --- */}
+                    
                     {Array.isArray(product.colors) && (
                         <div className={`${styles.formGroup} ${styles.stagger6}`}>
                             <label className={styles.label}>
