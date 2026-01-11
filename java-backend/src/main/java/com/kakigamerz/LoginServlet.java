@@ -16,17 +16,13 @@ import java.util.List;
 
 public class LoginServlet extends HttpServlet {
 
-    // UPDATE: Pointing to your new Data folder
     private final File jsonFile = new File("src/Data/users.json");
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        // 2. Parse Login Data
         Gson gson = new Gson();
         User loginAttempt = gson.fromJson(req.getReader(), User.class);
 
-        // 3. Read Users File
         if (!jsonFile.exists()) {
             resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             resp.getWriter().write("{\"success\": false, \"message\": \"User database empty\"}");
@@ -36,11 +32,15 @@ public class LoginServlet extends HttpServlet {
         String content = Files.readString(jsonFile.toPath(), StandardCharsets.UTF_8);
         List<User> users = gson.fromJson(content, new TypeToken<ArrayList<User>>(){}.getType());
 
-        // 4. Check Credentials
         if (users != null) {
             for (User u : users) {
-                if (u.email.equals(loginAttempt.email) && u.password.equals(loginAttempt.password)) {
-                    u.password = null; // Don't send password back to frontend
+                // OOP FIX: Use Getters for comparison
+                if (u.getEmail().equals(loginAttempt.getEmail()) &&
+                        u.getPassword().equals(loginAttempt.getPassword())) {
+
+                    // OOP FIX: Use Setter to clear password
+                    u.setPassword(null);
+
                     String userJson = gson.toJson(u);
                     resp.getWriter().write(userJson);
                     return;
@@ -48,9 +48,7 @@ public class LoginServlet extends HttpServlet {
             }
         }
 
-        // 5. Fail
         resp.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
         resp.getWriter().write("{\"success\": false, \"message\": \"Invalid email or password\"}");
     }
-
 }

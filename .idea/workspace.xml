@@ -5,19 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0e7f99b-0edd-44c9-9cee-aee7cf954985" name="Changes" comment="fix sidebar">
-      <change afterPath="$PROJECT_DIR$/react-frontend/src/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/Data/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/Data/users.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/CorsFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CorsFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CorsFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/AdminPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/AdminPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/CartPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/CartPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/ForgotPasswordPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/ForgotPasswordPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/FrontPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/FrontPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/GamePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/GamePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/LoginPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/LoginPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/ProductPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/ProductPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/react-frontend/src/pages/SignUpPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/react-frontend/src/pages/SignUpPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/Checkout.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/Checkout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/CheckoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/ForgotPasswordServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/ForgotPasswordServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/GameServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/GameServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/SignUpServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/SignUpServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/src/main/java/com/kakigamerz/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Checkout$CartItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Checkout$CartItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Checkout.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Checkout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CheckoutServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CheckoutServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CheckoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/CheckoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ForgotPasswordServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ForgotPasswordServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ForgotPasswordServlet$ResetRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ForgotPasswordServlet$ResetRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ForgotPasswordServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ForgotPasswordServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/GameServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/GameServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/LoginServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/LoginServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/LoginServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/LoginServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Product$Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Product$Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Product$Spec.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Product$Spec.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/ProductServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/SignUpServlet$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/SignUpServlet$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/SignUpServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/SignUpServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-backend/target/classes/com/kakigamerz/User.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +108,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "haziq/backend/redeploy-backend",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/haziq/Downloads/ComputerSciences/SEM 3/CAT201/IntelliJ/Assignmen_JoZiq/CAT201_Project/java-backend",

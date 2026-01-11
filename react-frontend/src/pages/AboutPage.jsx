@@ -37,12 +37,6 @@ function AboutPage() {
                     <hr className={styles.separator2}/>
                     <div className={styles['brand-tagline']}>YOUR REALITY, LEVELED UP.</div>
 
-                    <section className={styles['video-section']}>
-                        <video autoPlay muted loop playsInline className={styles['back-video']}>
-                            <source src="/vid/intro.mp4" type="video/mp4"/>
-                        </video>
-                    </section>
-
                     <p className={styles['about-text']}>
                         At <strong className={styles['text-white']}>Kaki Gamerz</strong>, we define the intersection of gaming
                         culture and modern mobility.

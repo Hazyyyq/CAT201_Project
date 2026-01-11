@@ -20,30 +20,42 @@ public class CheckoutServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 1. Parse the incoming cart items from React
+        // 1. Parse incoming data
         Checkout order = gson.fromJson(req.getReader(), Checkout.class);
 
-        // 2. Load the current products database
+        // 2. Load database
+        if (!jsonFile.exists()) {
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            return;
+        }
         String content = Files.readString(jsonFile.toPath(), StandardCharsets.UTF_8);
         List<Product> databaseProducts = gson.fromJson(content, new TypeToken<ArrayList<Product>>(){}.getType());
 
-        // 3. Logic: For every item in the cart, find it in the database and reduce stock
-        for (Checkout.CartItem cartItem : order.items) {
-            for (Product dbProduct : databaseProducts) {
-                // IMPORTANT: We use originalId if your cart uses Date.now(),
-                // but usually we pass the product's actual database ID.
-                if (dbProduct.id == cartItem.id) {
-                    if (dbProduct.stock > 0) {
-                        dbProduct.stock -= 1; // Reduce by 1
+        // 3. Logic: Update Stock using OOP Getters/Setters
+        // OOP FIX: Use .getItems()
+        if (order.getItems() != null) {
+            for (Checkout.CartItem cartItem : order.getItems()) {
+                for (Product dbProduct : databaseProducts) {
+
+                    // OOP FIX: Use .getId() for comparison
+                    if (dbProduct.getId() == cartItem.getId()) {
+
+                        // OOP FIX: Logic for reducing stock
+                        // Old way: dbProduct.stock -= 1; (INVALID in OOP)
+                        // New way: Get current stock, minus 1, then Set it back.
+                        int currentStock = dbProduct.getStock();
+                        if (currentStock > 0) {
+                            dbProduct.setStock(currentStock - 1);
+                        }
                     }
                 }
             }
         }
 
-        // 4. Save the updated list back to products.json
+        // 4. Save updated list
         Files.writeString(jsonFile.toPath(), gson.toJson(databaseProducts), StandardCharsets.UTF_8);
 
-        // 5. Respond to frontend
+        // 5. Respond
         resp.setContentType("application/json");
         resp.getWriter().write("{\"status\": \"success\", \"message\": \"Inventory Updated\"}");
     }
