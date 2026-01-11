@@ -6,16 +6,16 @@ import { API_BASE_URL } from '../config';
 const LoginPage = () => {
     const navigate = useNavigate();
 
-    // 1. STATE: Track email and password
+    
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    // 2. HANDLER: Send credentials to Java Backend
+    
     const handleLogin = async (e) => {
-        e.preventDefault(); // Stop page refresh
+        e.preventDefault(); 
 
         try {
-            // Use 127.0.0.1 to match your working Signup configuration
+            
             const response = await fetch(`${API_BASE_URL}/api/login`, {
                 method: 'POST',
                 headers: {
@@ -28,15 +28,15 @@ const LoginPage = () => {
             });
 
             if (response.ok) {
-                // A. Parse the User Data sent back by Java
+                
                 const userData = await response.json();
 
-                // B. Save to Local Storage (This logs them in!)
+                
                 localStorage.setItem('currentUser', JSON.stringify(userData));
 
-                // C. Redirect to Home (or Admin Dashboard if they are admin)
+                
                 if (userData.role === 'admin') {
-                    // navigate('/admin'); // Uncomment this later when you have an admin route
+                    
                     alert("Welcome Admin!");
                     navigate('/');
                 } else {
@@ -44,7 +44,7 @@ const LoginPage = () => {
                     navigate('/');
                 }
 
-                // Optional: Force a page reload to update the Navbar immediately
+                
                 window.location.reload();
 
             } else {
@@ -67,7 +67,7 @@ const LoginPage = () => {
             </nav>
 
             <div className={styles.wrapper}>
-                {/* Connect Handler */}
+                
                 <form onSubmit={handleLogin}>
                     <h1>Login</h1>
 
@@ -76,7 +76,7 @@ const LoginPage = () => {
                             type="email"
                             placeholder="Email"
                             required
-                            // Connect State
+                            
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
@@ -88,7 +88,7 @@ const LoginPage = () => {
                             type="password"
                             placeholder="Password"
                             required
-                            // Connect State
+                            
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
