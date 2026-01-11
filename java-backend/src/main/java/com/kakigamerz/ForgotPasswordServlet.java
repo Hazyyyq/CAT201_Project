@@ -18,12 +18,12 @@ public class ForgotPasswordServlet extends HttpServlet {
 
     private final File jsonFile = new File("src/Data/users.json");
 
-    // OOP FIX: Encapsulate this inner class
+   
     private static class ResetRequest {
         private String email;
         private String newPassword;
 
-        // Getters and Setters
+        
         public String getEmail() { return email; }
         public void setEmail(String email) { this.email = email; }
 
@@ -54,10 +54,10 @@ public class ForgotPasswordServlet extends HttpServlet {
 
             boolean userFound = false;
             for (User u : users) {
-                // OOP FIX: Use Getters (.getEmail())
+               
                 if (u.getEmail().equals(resetReq.getEmail())) {
 
-                    // OOP FIX: Use Setters (.setPassword())
+                    
                     u.setPassword(resetReq.getNewPassword());
 
                     userFound = true;
