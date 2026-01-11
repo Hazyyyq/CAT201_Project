@@ -6,14 +6,14 @@ import { API_BASE_URL } from '../config';
 const ForgotPasswordPage = () => {
     const navigate = useNavigate();
 
-    // 1. STATE: Store input values
+    
     const [formData, setFormData] = useState({
         email: '',
         newPassword: '',
         confirmPassword: ''
     });
 
-    // 2. HANDLER: Update state when user types
+  
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -25,7 +25,7 @@ const ForgotPasswordPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Basic validation
+        
         if (formData.newPassword !== formData.confirmPassword) {
             alert("Passwords do not match!");
             return;
@@ -69,7 +69,7 @@ const ForgotPasswordPage = () => {
 
             <div className={styles.wrapper}>
                 <form onSubmit={handleSubmit}>
-                    {/* Reuse the gamer font title */}
+                    
                     <h1>Reset Password</h1>
 
                     <div className={styles['input-box']}>
