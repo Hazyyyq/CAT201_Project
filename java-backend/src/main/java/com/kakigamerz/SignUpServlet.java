@@ -29,7 +29,7 @@ public class SignUpServlet extends HttpServlet {
             users = gson.fromJson(content, new TypeToken<ArrayList<User>>() {}.getType());
         }
 
-        // OOP FIX: Use .getEmail()
+        
         for (User u : users) {
             if (u.getEmail().equals(newUser.getEmail())) {
                 resp.setStatus(HttpServletResponse.SC_CONFLICT);
@@ -38,7 +38,7 @@ public class SignUpServlet extends HttpServlet {
             }
         }
 
-        // OOP FIX: Use Setters
+        
         newUser.setId(UUID.randomUUID().toString());
         newUser.setRole("customer");
         users.add(newUser);
