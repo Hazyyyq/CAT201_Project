@@ -9,7 +9,7 @@
     border-radius: 12px;
 }
 
-/* Layout */
+
 .admin-container {
     max-width: 1000px;
     margin: 80px auto 40px;
@@ -50,7 +50,7 @@
     background-color: #0077ed;
 }
 
-/* Filter Tabs */
+
 .filter-tabs {
     margin-bottom: 25px;
     display: flex;
@@ -73,7 +73,7 @@
     border-color: #f5f5f7;
 }
 
-/* Product Grid */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -179,7 +179,7 @@
     background: rgba(255, 59, 48, 0.3);
 }
 
-/* Modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -202,8 +202,8 @@
     max-width: 500px;
     border: 1px solid #424245;
 
-    max-height: 90vh; /* Limits height to 90% of screen */
-    overflow-y: auto; /* Adds scrollbar if content is too long */
+    max-height: 90vh; 
+    overflow-y: auto; 
     position: relative;
 }
 
@@ -220,7 +220,7 @@
 }
 
 .form-group {
-    flex: 1; /* Makes sure both columns are equal width */
+    flex: 1; 
     display: flex;
     flex-direction: column;
 }
@@ -282,7 +282,7 @@ input:focus, textarea:focus {
     cursor: pointer;
 }
 
-/* Utils */
+
 .text-danger {
     color: #ff453a !important;
     font-weight: 800;
@@ -299,9 +299,9 @@ input:focus, textarea:focus {
     background-color: #2d2d2f;
 }
 
-/* --- NEW: Custom File Input Styling --- */
+
 input[type="file"] {
-    display: none; /* Hide the ugly default button */
+    display: none; 
 }
 
 .custom-file-upload {
@@ -330,19 +330,19 @@ input[type="file"] {
     font-style: italic;
 }
 
-/* Wrapper to allow absolute positioning of the badge */
+
 .card-image-wrapper {
     position: relative;
     height: 180px;
     overflow: hidden;
 }
 
-/* Badge styled exactly like the GamePage discount badge */
+
 .card-tag-badge {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #ff4747; /* Red for discounts */
+    background: #ff4747; 
     color: white;
     font-weight: bold;
     padding: 4px 8px;
@@ -352,13 +352,13 @@ input[type="file"] {
     text-transform: uppercase;
 }
 
-/* Logic for "NEW" or "HOT" badges (Blue instead of Red) */
+
 .card-tag-badge-blue {
         background: #0071e3 !important;
         box-shadow: 0 4px 15px rgba(0, 113, 227, 0.3) !important;
 }
 
-/* Price Row Styling to match GamePage */
+
 .price-row {
     display: flex;
     align-items: center;
@@ -377,7 +377,7 @@ input[type="file"] {
     font-size: 16px;
 }
 
-/* Image Preview in Modal */
+
 .img-preview {
     display: block;
     max-width: 100px;
