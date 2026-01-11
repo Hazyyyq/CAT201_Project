@@ -46,7 +46,7 @@ public class Main {
         Tomcat.addServlet(ctx, "SignUpServlet", new SignUpServlet());
         ctx.addServletMappingDecoded("/api/signup", "SignUpServlet");
 
-        tomcat.addServlet(ctx, "ForgotPasswordServlet", new ForgotPasswordServlet());
+        Tomcat.addServlet(ctx, "ForgotPasswordServlet", new ForgotPasswordServlet());
         ctx.addServletMappingDecoded("/api/forgot-password", "ForgotPasswordServlet");
 
         Tomcat.addServlet(ctx, "LoginServlet", new LoginServlet());
